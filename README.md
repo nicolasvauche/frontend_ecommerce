@@ -38,8 +38,8 @@ Sur toutes les pages :
     * Liens légaux (à définir)
 
 ## Éléments conceptuels :  
-* Exemple de logo
-* 4 photos de chaussures
+* Exemple de logo : [https://github.com/nicolasvauche/frontend_ecommerce/blob/master/assets/img/logo.png]
+* 4 photos de chaussures : [https://github.com/nicolasvauche/frontend_ecommerce/blob/master/assets/img/catalog/shoes/]
 * Typographies :
     * Standard : Roboto
     * Titres : Audiowide
