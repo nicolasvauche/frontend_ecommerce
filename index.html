@@ -12,7 +12,7 @@
     <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png" />
     <link rel="manifest" href="/site.webmanifest" />
     <link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5" />
-    <meta name="msapplication-TileColor" content="#da532c" />
+    <meta name="msapplication-TileColor" content="#00aba9" />
     <meta name="theme-color" content="#ffffff" />
 
     <link rel="preconnect" href="https://fonts.googleapis.com" />
@@ -127,7 +127,7 @@
                 </ul>
               </li>
               <li class="nav-item">
-                <a class="btn btn-outline-secondary py-1 mx-2" href="#">
+                <a class="btn btn-outline-primary py-1 mx-2" href="#">
                   <i class="fa-solid fa-user-lock"></i>
                   <small>Connexion</small>
                 </a>
@@ -157,16 +157,21 @@
       </nav>
     </header>
 
-    <div class="alert alert-primary text-center m-3 mb-0" role="alert">
-      <i class="fa-solid fa-circle-info me-1"></i>
-      <small>Le savais-tu :</small> en vrai, <strong>SHOE</strong> se prononce <strong>&laquo;&nbsp;SHOÉ&nbsp;&raquo;</strong>
+    <!-- PAGE ALERTS -->
+    <div class="alert alert-primary text-center m-3 mb-0 shadow" role="alert">
+      <strong>Le savais-tu :</strong>
+      <small
+        >en vrai, <strong>SHOE</strong> se prononce
+        <strong>&laquo;&nbsp;SHOÉ&nbsp;&raquo;</strong>
+      </small>
+      <i class="fa-solid fa-face-smile-wink fa-lg"></i>
     </div>
 
     <!-- Page Main -->
     <main>
       <!-- Section Presentation -->
       <section
-        class="mt-4 py-5 px-1 m-3 bg-light rounded text-center shadow position-relative"
+        class="mt-4 py-5 pb-1 px-1 m-3 rounded text-center shadow position-relative"
       >
         <img
           src="assets/img/bg_home.jpg"
@@ -175,41 +180,46 @@
         />
         <h1>
           Tu vas pas y aller pieds nus
-          <i class="fa-regular fa-face-laugh-beam"></i>
+          <i class="fa-regular fa-face-surprise"></i>
         </h1>
-        <p class="py-3 px-2 text-justify">
+        <p class="col-sm-8 offset-sm-2 py-3 px-2 text-justify">
           Lorem ipsum dolor sit amet consectetur adipisicing elit. Maxime,
           soluta similique. Voluptates minus ipsam amet quo incidunt eum facilis
           mollitia dignissimos, corrupti voluptate officia alias dolor suscipit
-          doloremque at error.
-          <br />
-          Lorem ipsum dolor sit amet consectetur adipisicing elit. Maxime,
-          soluta similique. Voluptates minus ipsam amet quo incidunt eum facilis
-          mollitia dignissimos, corrupti voluptate officia alias dolor suscipit
-          doloremque at error.
+          doloremque at error. Lorem ipsum dolor sit amet consectetur
+          adipisicing elit. Maxime, soluta similique. Voluptates minus ipsam
+          amet quo incidunt eum facilis mollitia dignissimos, corrupti voluptate
+          officia alias dolor suscipit doloremque at error.
         </p>
-        <button class="btn btn-third btn-lg" type="button">
+
+        <a href="#" class="btn btn-third btn-lg" type="button">
           Je crée mon compte
-        </button>
+        </a>
+
+        <img
+          src="assets/img/made_in_france.png"
+          class="ms-auto mt-3 btn-block logo-mif"
+          alt="Made in France"
+        />
       </section>
 
       <!-- SECTION PRODUCTS -->
       <section class="mt-4 py-5 px-1 m-3 bg-light">
-        <h2 class="mb-4 text-center">
-          Pour l'instant on en a quatre
-          <i class="fa-regular fa-face-grin-hearts"></i>
+        <h2 class="mb-5 text-center">
+          Les 4 premières
+          <i class="fa-regular fa-face-grin-stars"></i>
         </h2>
         <div class="container">
           <div class="row">
-            <div class="col-sm-3 mb-4">
-              <div class="card">
+            <div class="col-sm-6 mb-4">
+              <div class="card shadow">
                 <img
                   src="assets/img/catalog/shoes/shoes01.jpg"
                   class="card-img-top"
                   alt="Chaussures 1"
                 />
                 <div class="card-body">
-                  <h5 class="card-title text-center">Chaussures 1</h5>
+                  <h5 class="card-title text-center">Tranquille en ville</h5>
                   <p class="card-text">
                     Some quick example text to build on the card title and make
                     up the bulk of the card's content.
@@ -221,15 +231,15 @@
                 </div>
               </div>
             </div>
-            <div class="col-sm-3 mb-4">
-              <div class="card">
+            <div class="col-sm-6 mb-4">
+              <div class="card shadow">
                 <img
                   src="assets/img/catalog/shoes/shoes02.jpg"
                   class="card-img-top"
                   alt="Chaussures 2"
                 />
                 <div class="card-body">
-                  <h5 class="card-title text-center">Chaussures 2</h5>
+                  <h5 class="card-title text-center">Va faire du sport</h5>
                   <p class="card-text">
                     Some quick example text to build on the card title and make
                     up the bulk of the card's content.
@@ -241,15 +251,15 @@
                 </div>
               </div>
             </div>
-            <div class="col-sm-3 mb-4">
-              <div class="card">
+            <div class="col-sm-6 mb-4">
+              <div class="card shadow">
                 <img
                   src="assets/img/catalog/shoes/shoes03.jpg"
                   class="card-img-top"
                   alt="Chaussures 3"
                 />
                 <div class="card-body">
-                  <h5 class="card-title text-center">Chaussures 3</h5>
+                  <h5 class="card-title text-center">Passe-partout</h5>
                   <p class="card-text">
                     Some quick example text to build on the card title and make
                     up the bulk of the card's content.
@@ -261,15 +271,15 @@
                 </div>
               </div>
             </div>
-            <div class="col-sm-3 mb-4">
-              <div class="card">
+            <div class="col-sm-6 mb-4">
+              <div class="card shadow">
                 <img
                   src="assets/img/catalog/shoes/shoes04.jpg"
                   class="card-img-top"
                   alt="Chaussures 4"
                 />
                 <div class="card-body">
-                  <h5 class="card-title text-center">Chaussures 4</h5>
+                  <h5 class="card-title text-center">Str33tf00t style</h5>
                   <p class="card-text">
                     Some quick example text to build on the card title and make
                     up the bulk of the card's content.
@@ -287,9 +297,74 @@
     </main>
 
     <!-- Page Footer -->
-    <footer class="mt-auto p-3 text-light text-center bg-dark">
-      <img src="assets/img/logo_w.png" alt="Logo SHOE" />
-      <p>Footer</p>
+    <section class="prefoot">
+      <div class="container">
+        <div class="row">
+          <div class="col-sm-3 my-4">
+            <div class="card bg-transparent text-center">
+              <div class="card-body">
+                <i class="fa-solid fa-igloo"></i>
+                <h5 class="card-title text-center">Achetez au chaud</h5>
+                <p class="card-text text-light text-center">
+                  De chez vous, sur le canapé de vos amis, aux toilettes, dans
+                  le bus, ou à la pause déjeuner : avec nous c'est où vous
+                  voulez, quand vous voulez.
+                </p>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-sm-3 my-4">
+            <div class="card bg-transparent text-center">
+              <div class="card-body">
+                <i class="fa-solid fa-money-bill-wave"></i>
+                <h5 class="card-title text-center">Payez content</h5>
+                <p class="card-text text-light text-center">
+                  Chez nous, le paiement en ligne c'est comme d'habitude chez
+                  les gens sérieux : c'est sécurisé et c'est selon vos habitudes
+                  : carte bancaire, Paypal, etc…
+                </p>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-sm-3 my-4">
+            <div class="card bg-transparent text-center">
+              <div class="card-body">
+                <i class="fa-solid fa-truck-fast"></i>
+                <h5 class="card-title text-center">Attendez un peu</h5>
+                <p class="card-text text-light text-center">
+                  Vous allez bientôt recevoir vos nouvelles chaussures SHOE !
+                  Vous n'en pouvez plus d'attendre, et oh oui, on vous comprend
+                  très bien&nbsp;!
+                </p>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-sm-3 my-4">
+            <div class="card bg-transparent text-center">
+              <div class="card-body">
+                <i class="fa-solid fa-rotate-left"></i>
+                <h5 class="card-title text-center">Renvoyez-les</h5>
+                <p class="card-text text-light text-center">
+                  Si vous, ou nous, ou tout le monde s'est trompé, hé bien pas
+                  de souci ! Les retours sont rapides et gratuits, on ne va pas
+                  s'embrouiller pour des pompes…
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <footer class="mt-auto p-3 py-2 text-light text-center bg-dark">
+      <img src="assets/img/logo_w.png" class="mb-3" alt="Logo SHOE" />
+
+      <p class="mb-0">
+        © SHOE 2022 - Tous Droits Réservés - <a href="#">www.shoe.fr</a> | Liens
+        légaux
+      </p>
     </footer>
   </body>
 </html>
