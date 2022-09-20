@@ -65,5 +65,5 @@ Il faudrait que les gens puissent s’abonner à la newsletter
             * Mes adresses
             * Mes commandes
             * Ma newsletter
-* Maquette HTML5 + Botstrap
+* Maquette HTML5 + Bootstrap
 * Maquette HTML5 + SASS
