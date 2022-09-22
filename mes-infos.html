@@ -5,7 +5,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-    <title>Vérifie ton profil et habille tes pieds avec SHOE</title>
+    <title>Vérifie ton profil avant d'habiller tes pieds avec SHOE</title>
 
     <link rel="apple-touch-icon" sizes="152x152" href="/apple-touch-icon.png" />
     <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png" />
@@ -99,6 +99,12 @@
                     <a class="dropdown-item" href="mes-adresses.html">
                       <i class="fa-solid fa-map-location-dot"></i>
                       Mes adresses
+                    </a>
+                  </li>
+                  <li>
+                    <a class="dropdown-item" href="mon-courrier.html">
+                      <i class="fa-regular fa-envelope"></i>
+                      Mon courrier
                     </a>
                   </li>
                   <li>
@@ -199,6 +205,12 @@
                     <a href="mes-adresses.html" class="nav-link px-0">
                       <i class="fa-solid fa-map-location-dot"></i>
                       <span class="ms-1 d-none d-xl-inline">Mes adresses</span>
+                    </a>
+                  </li>
+                  <li class="nav-item">
+                    <a href="mon-courrier.html" class="nav-link px-0">
+                      <i class="fa-regular fa-envelope"></i>
+                      <span class="ms-1 d-none d-xl-inline">Mon courrier</span>
                     </a>
                   </li>
                   <li class="nav-item">
@@ -409,6 +421,25 @@
         <img src="assets/img/logo_w.png" alt="Logo SHOE" />
         <figcaption>Habille tes <span>pieds</span></figcaption>
       </figure>
+
+      <div class="container mb-4">
+        <form class="d-sm-inline">
+          <label for="emailNewsletter" class="form-label required mb-3"
+            >Tu veux du courrier ?
+          </label>
+          <input
+            type="email"
+            class="form-control text-center mb-3 d-sm-inline"
+            id="emailNewsletter"
+            required
+            aria-required="true"
+            placeholder="Ton adresse email"
+          />
+          <button class="btn btn-third d-sm-inline">
+            Je m'abonne à la Newsletter
+          </button>
+        </form>
+      </div>
 
       <p class="mb-0">
         © SHOE 2022 - Tous Droits Réservés - <a href="#">www.shoe.fr</a> | Liens

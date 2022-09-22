@@ -5,7 +5,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-    <title>Bientôt tu pourras habiller tes pieds avec SHOE</title>
+    <title>Découvre comment bien habiller tes pieds avec SHOE</title>
 
     <link rel="apple-touch-icon" sizes="152x152" href="/apple-touch-icon.png" />
     <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png" />
@@ -102,16 +102,13 @@
                     </a>
                   </li>
                   <li>
-                    <a class="dropdown-item" href="mon-courrier.html">
+                    <a class="dropdown-item active" href="mon-courrier.html">
                       <i class="fa-regular fa-envelope"></i>
                       Mon courrier
                     </a>
                   </li>
                   <li>
-                    <a
-                      class="dropdown-item active"
-                      href="mes-precommandes.html"
-                    >
+                    <a class="dropdown-item" href="mes-precommandes.html">
                       <i class="fa-solid fa-basket-shopping"></i>
                       Mes précommandes
                     </a>
@@ -178,15 +175,15 @@
     <div class="alert alert-primary text-center m-3 mb-0 shadow" role="alert">
       <strong>Le savais-tu :</strong>
       <small>
-        Nous allons te prévenir dès que tes précommandes seront disponibles,
-        t'inquiète
+        Si tu t'abonnes à notre newsletter, tu recevras du courrier intéressant
+        <small>(pour une fois)</small>
       </small>
       <i class="fa-solid fa-face-smile-wink fa-lg"></i>
     </div>
 
     <!-- Page Main -->
     <main>
-      <!-- Section PRECOMMANDES -->
+      <!-- Section COMMANDES -->
       <section class="mt-2 py-4 px-1 rounded shadow bg-light">
         <div class="container-fluid">
           <div class="row flex-nowrap">
@@ -196,7 +193,6 @@
                 <h2 class="frame text-center d-none d-xl-inline">
                   Espace Client
                 </h2>
-
                 <ul class="nav nav-pills flex-column mb-sm-auto mb-0" id="menu">
                   <li class="nav-item">
                     <a href="mes-infos.html" class="nav-link px-0">
@@ -211,16 +207,13 @@
                     </a>
                   </li>
                   <li class="nav-item">
-                    <a href="mon-courrier.html" class="nav-link px-0">
+                    <a href="mon-courrier.html" class="nav-link px-0 active">
                       <i class="fa-regular fa-envelope"></i>
                       <span class="ms-1 d-none d-xl-inline">Mon courrier</span>
                     </a>
                   </li>
                   <li class="nav-item">
-                    <a
-                      href="mes-precommandes.html"
-                      class="nav-link px-0 active"
-                    >
+                    <a href="mes-precommandes.html" class="nav-link px-0">
                       <i class="fa-solid fa-basket-shopping"></i>
                       <span class="ms-1 d-none d-xl-inline"
                         >Mes précommandes</span
@@ -253,13 +246,46 @@
             <!-- Main Content -->
             <div class="col py-3 text-center">
               <h1 class="frame mx-3 text-center">
-                Juste un peu de patience
-                <i class="fa-solid fa-clock"></i>
+                T'en veux encore
+                <i class="fa-solid fa-circle-question"></i>
               </h1>
 
-              <div class="container py-3 my-3">
-                <p>Aucune précommande en cours…</p>
+              <div class="container py-3 my-3 pb-0">
+                <p class="text-red">
+                  <strong>Tu n'es pas abonné à la newsletter</strong>
+                  <i class="fa-regular fa-face-surprise"></i>
+                </p>
               </div>
+
+              <form>
+                <div class="container">
+                  <div class="row">
+                    <div class="col-sm-6 offset-sm-3 mb-4">
+                      <label for="userEmail" class="form-label required"
+                        >E-mail :</label
+                      >
+                      <input
+                        type="email"
+                        class="form-control text-center"
+                        id="userEmail"
+                        aria-describedby="emailHelp"
+                        required
+                        aria-required="true"
+                      />
+                      <div id="emailHelp" class="form-text">
+                        Tu vas recevoir un mail pour confirmer ton inscription.
+                        Hé oui, chez nous c'est sécurisé !
+                      </div>
+                    </div>
+
+                    <div class="col-sm-6 offset-sm-3">
+                      <button class="btn btn-lg btn-third btn-block mt-3">
+                        Je m'abonne
+                      </button>
+                    </div>
+                  </div>
+                </div>
+              </form>
             </div>
           </div>
         </div>

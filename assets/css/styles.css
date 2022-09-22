@@ -139,6 +139,12 @@ figcaption span {
   color: var(--color-green) !important;
 }
 
+@media (min-width: 576px) {
+  .d-sm-inline {
+    width: auto;
+  }
+}
+
 /* NAVBARS */
 .navbar {
   border-top: 4px solid var(--color-blue);
