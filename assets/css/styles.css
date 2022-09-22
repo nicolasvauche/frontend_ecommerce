@@ -44,6 +44,15 @@ h2 {
   text-shadow: 1px 1px 1px rgba(17, 17, 17, 0.1);
 }
 
+h3 {
+  font-family: var(--font-secondary);
+  font-size: 1.5rem;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  color: var(--color-red);
+  text-shadow: 1px 1px 1px rgba(17, 17, 17, 0.1);
+}
+
 a {
   color: inherit;
 }
@@ -126,6 +135,10 @@ figcaption span {
   width: 16vh !important;
 }
 
+.color-green {
+  color: var(--color-green) !important;
+}
+
 /* NAVBARS */
 .navbar {
   border-top: 4px solid var(--color-blue);
@@ -204,7 +217,31 @@ figcaption span {
 }
 
 .dropdown-divider {
-  border-top: 1px solid var(--color-blue);
+  border-top: 1px solid rgba(17, 17, 17, 0.01);
+  box-shadow: 1px 1px 1px rgba(17, 17, 17, 0.5);
+}
+
+.nav-pills .nav-link.active,
+.nav-pills .show > .nav-link {
+  color: var(--color-red);
+  background-color: transparent;
+}
+
+.dropdown-item.active,
+.dropdown-item:active {
+  color: var(--color-red);
+  background-color: transparent;
+}
+
+.dropdown-item.active i,
+.dropdown-item:active i {
+  color: var(--color-red);
+  background-color: transparent;
+}
+
+.menu {
+  position: sticky;
+  top: 6rem;
 }
 
 /* FORMS */
@@ -299,6 +336,12 @@ figcaption span {
 
 .btn-sm {
   font-family: var(--font-primary);
+}
+
+.btn-red {
+  color: var(--color-white);
+  background-color: var(--color-red);
+  border-color: var(--color-red);
 }
 
 /* CARDS */

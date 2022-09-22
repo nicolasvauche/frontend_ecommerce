@@ -5,7 +5,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-    <title>Habille tes pieds avec SHOE</title>
+    <title>Vérifie ton profil et habille tes pieds avec SHOE</title>
 
     <link rel="apple-touch-icon" sizes="152x152" href="/apple-touch-icon.png" />
     <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png" />
@@ -71,18 +71,14 @@
               class="navbar-nav mx-auto mb-2 mb-lg-0 align-items-center justify-content-between"
             >
               <li class="nav-item">
-                <a
-                  class="nav-link active"
-                  aria-current="page"
-                  href="index.html"
-                >
+                <a class="nav-link" href="index.html">
                   <i class="fa-solid fa-house"></i>
                   Accueil
                 </a>
               </li>
               <li class="nav-item dropdown">
                 <a
-                  class="nav-link dropdown-toggle"
+                  class="nav-link dropdown-toggle active"
                   href="#"
                   id="navbarDropdown"
                   role="button"
@@ -94,7 +90,7 @@
                 </a>
                 <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
                   <li>
-                    <a class="dropdown-item" href="mes-infos.html">
+                    <a class="dropdown-item active" href="mes-infos.html">
                       <i class="fa-solid fa-id-card"></i>
                       Mes infos
                     </a>
@@ -172,144 +168,173 @@
     <!-- PAGE ALERTS -->
     <div class="alert alert-primary text-center m-3 mb-0 shadow" role="alert">
       <strong>Le savais-tu :</strong>
-      <small
-        >en vrai, <strong>SHOE</strong> se prononce
-        <strong>&laquo;&nbsp;SHOÉ&nbsp;&raquo;</strong>
+      <small>
+        Si tu nous donnes ta date de naissance, on te souhaitera ton
+        anniversaire
       </small>
       <i class="fa-solid fa-face-smile-wink fa-lg"></i>
     </div>
 
     <!-- Page Main -->
     <main>
-      <!-- Section Presentation -->
-      <section
-        class="mt-4 py-5 pb-1 px-1 m-3 rounded text-center shadow position-relative"
-      >
-        <img
-          src="assets/img/bg_home.jpg"
-          class="bg-image rounded"
-          alt="Pieds nus"
-        />
-        <h1>
-          Tu vas pas y aller pieds nus
-          <i class="fa-regular fa-face-surprise"></i>
-        </h1>
-        <p class="col-sm-8 offset-sm-2 py-3 px-2 text-justify">
-          Lorem ipsum dolor sit amet consectetur adipisicing elit. Maxime,
-          soluta similique. Voluptates minus ipsam amet quo incidunt eum facilis
-          mollitia dignissimos, corrupti voluptate officia alias dolor suscipit
-          doloremque at error. Lorem ipsum dolor sit amet consectetur
-          adipisicing elit. Maxime, soluta similique. Voluptates minus ipsam
-          amet quo incidunt eum facilis mollitia dignissimos, corrupti voluptate
-          officia alias dolor suscipit doloremque at error.
-        </p>
+      <!-- Section INFOS -->
+      <section class="mt-2 py-4 px-1 rounded shadow bg-light">
+        <div class="container-fluid">
+          <div class="row flex-nowrap">
+            <!-- Menu Espace client -->
+            <div class="col-auto col-md-4 col-xl-3 px-sm-2 py-3 px-0 bg-white">
+              <div class="d-flex flex-column px-3 menu">
+                <h2 class="frame text-center d-none d-sm-inline">
+                  Espace Client
+                </h2>
 
-        <a href="inscription.html" class="btn btn-third btn-lg" type="button">
-          Alors crée ton compte !
-        </a>
-
-        <img
-          src="assets/img/made_in_france.png"
-          class="ms-auto mt-3 btn-block logo-mif"
-          alt="Made in France"
-        />
-      </section>
-
-      <!-- SECTION PRODUCTS -->
-      <section class="mt-4 py-5 px-1 m-0 bg-light">
-        <h2 class="mb-5 mx-3 text-center frame">
-          Les 4 premières
-          <i class="fa-regular fa-face-grin-stars"></i>
-        </h2>
-        <div class="container">
-          <div class="row">
-            <div class="col-sm-6 mb-4">
-              <div class="card shadow">
-                <img
-                  src="assets/img/catalog/shoes/shoes01.jpg"
-                  class="card-img-top"
-                  alt="Chaussures 1"
-                />
-                <div class="card-body">
-                  <h5 class="card-title text-center">Tranquille en ville</h5>
-                  <p class="card-text">
-                    Some quick example text to build on the card title and make
-                    up the bulk of the card's content. Yeah !
-                  </p>
-                  <p class="text-center mb-0">
-                    <a href="#" class="btn btn-primary">
-                      <i class="fa-solid fa-basket-shopping"></i>
-                      <small>Je les commande</small>
+                <ul class="nav nav-pills flex-column mb-sm-auto mb-0" id="menu">
+                  <li class="nav-item">
+                    <a href="mes-infos.html" class="nav-link px-0 active">
+                      <i class="fa-solid fa-id-card"></i>
+                      <span class="ms-1 d-none d-sm-inline">Mes infos</span>
                     </a>
-                  </p>
-                </div>
+                  </li>
+                  <li class="nav-item">
+                    <a href="mes-adresses.html" class="nav-link px-0">
+                      <i class="fa-solid fa-map-location-dot"></i>
+                      <span class="ms-1 d-none d-sm-inline">Mes adresses</span>
+                    </a>
+                  </li>
+                  <li class="nav-item">
+                    <a href="mes-precommandes.html" class="nav-link px-0">
+                      <i class="fa-solid fa-basket-shopping"></i>
+                      <span class="ms-1 d-none d-sm-inline"
+                        >Mes précommandes</span
+                      >
+                    </a>
+                  </li>
+                  <li class="nav-item">
+                    <a href="mes-commandes.html" class="nav-link px-0">
+                      <i class="fa-solid fa-shop"></i>
+                      <span class="ms-1 d-none d-sm-inline">Mes commandes</span>
+                    </a>
+                  </li>
+                  <li>
+                    <hr class="dropdown-divider" />
+                  </li>
+                  <li class="nav-item">
+                    <a
+                      href="connexion.html"
+                      class="nav-link px-0"
+                      onclick="return window.confirm('Tu es sûr de vouloir te déconnecter ?');"
+                    >
+                      <i class="fa-solid fa-right-from-bracket text-red"></i>
+                      <span class="ms-1 d-none d-sm-inline">Déconnexion</span>
+                    </a>
+                  </li>
+                </ul>
               </div>
             </div>
-            <div class="col-sm-6 mb-4">
-              <div class="card shadow">
-                <img
-                  src="assets/img/catalog/shoes/shoes02.jpg"
-                  class="card-img-top"
-                  alt="Chaussures 2"
-                />
-                <div class="card-body">
-                  <h5 class="card-title text-center">Va faire du sport</h5>
-                  <p class="card-text">
-                    Another quick example text to build on the card title and
-                    make up the bulk of the card's content.
-                  </p>
-                  <p class="text-center mb-0">
-                    <a href="#" class="btn btn-third">
-                      <i class="fa-solid fa-basket-shopping"></i>
-                      <small>J'achète maintenant</small>
-                    </a>
-                  </p>
+
+            <!-- Main Content -->
+            <div class="col py-3 text-center">
+              <h1 class="frame mx-3 text-center">
+                Qui es-tu
+                <i class="fa-solid fa-circle-question"></i>
+              </h1>
+
+              <form class="py-3 my-3">
+                <div class="container">
+                  <div class="row">
+                    <div class="col-sm-6 mb-4">
+                      <label for="userFirstname" class="form-label"
+                        >Prénom :</label
+                      >
+                      <input
+                        type="text"
+                        class="form-control text-center"
+                        id="userFirstname"
+                        aria-describedby="firstnameHelp"
+                      />
+                      <div id="firstnameHelp" class="form-text">
+                        Si tu veux qu'on t'appelle par ton prénom quand tu seras
+                        connecté. C'est plus friendly <strong>:)</strong>
+                      </div>
+                    </div>
+
+                    <div class="col-sm-6 mb-4">
+                      <label for="userLastname" class="form-label">Nom :</label>
+                      <input
+                        type="text"
+                        class="form-control text-center"
+                        id="userLastname"
+                        aria-describedby="lastnameHelp"
+                      />
+                      <div id="lastnameHelp" class="form-text">
+                        Ça ne servira que pour commander. Mais enregistre-le dès
+                        maintenant, ça sera fait.
+                      </div>
+                    </div>
+
+                    <div class="col-sm-6 mb-4">
+                      <label for="userEmail" class="form-label required"
+                        >E-mail :</label
+                      >
+                      <input
+                        type="email"
+                        class="form-control text-center"
+                        id="userEmail"
+                        aria-describedby="emailHelp"
+                        required
+                        aria-required="true"
+                        value="hello@nicolasvauche.net"
+                      />
+                      <div id="emailHelp" class="form-text">
+                        Nous ne revendons pas les données de nos clients.
+                        Jamais. Même pas pour un tas de <strong>$$$</strong>.
+                      </div>
+                    </div>
+
+                    <div class="col-sm-3 mb-4">
+                      <label for="userPassword" class="form-label"
+                        >Mot de passe :</label
+                      >
+                      <input
+                        type="password"
+                        class="form-control text-center"
+                        id="userPassword"
+                        aria-describedby="passwordHelp"
+                        pattern="^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[#$^+=!*()@%&]).{8,10}$"
+                      />
+                      <div id="passwordHelp" class="form-text">
+                        Au moins <strong>8</strong> caractères. Et des
+                        majuscules. Et aussi des chiffres. Et des lettres
+                        normales.
+                      </div>
+                    </div>
+
+                    <div class="col-sm-3 mb-5">
+                      <label for="userPasswordConfirm" class="form-label"
+                        >Confirme stp :</label
+                      >
+                      <input
+                        type="password"
+                        class="form-control text-center"
+                        id="userPasswordConfirm"
+                        aria-describedby="password2Help"
+                        pattern="^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[#$^+=!*()@%&]).{8,10}$"
+                      />
+                      <div id="password2Help" class="form-text">
+                        Et au moins un petit <strong>$</strong> ou
+                        <strong>*</strong> ou <strong>!</strong> ou même
+                        <strong>+</strong>, ça ne mange pas de pain…
+                      </div>
+                    </div>
+
+                    <div class="col-sm-6 offset-sm-3">
+                      <button class="btn btn-lg btn-third btn-block mt-3">
+                        J'enregistre mes infos
+                      </button>
+                    </div>
+                  </div>
                 </div>
-              </div>
-            </div>
-            <div class="col-sm-6 mb-4">
-              <div class="card shadow">
-                <img
-                  src="assets/img/catalog/shoes/shoes03.jpg"
-                  class="card-img-top"
-                  alt="Chaussures 3"
-                />
-                <div class="card-body">
-                  <h5 class="card-title text-center">Passe-partout</h5>
-                  <p class="card-text">
-                    And another quick example text to build on the card title
-                    and make up the bulk of the card's content… Pffff…
-                  </p>
-                  <p class="text-center mb-0">
-                    <a href="#" class="btn btn-third">
-                      <i class="fa-solid fa-basket-shopping"></i>
-                      <small>J'achète maintenant</small>
-                    </a>
-                  </p>
-                </div>
-              </div>
-            </div>
-            <div class="col-sm-6 mb-4">
-              <div class="card shadow">
-                <img
-                  src="assets/img/catalog/shoes/shoes04.jpg"
-                  class="card-img-top"
-                  alt="Chaussures 4"
-                />
-                <div class="card-body">
-                  <h5 class="card-title text-center">Str33tf00t style</h5>
-                  <p class="card-text">
-                    Some quick example text to build on the card title and make
-                    up the bulk of the card's content. Shut up.
-                  </p>
-                  <p class="text-center mb-0">
-                    <a href="#" class="btn btn-primary">
-                      <i class="fa-solid fa-basket-shopping"></i>
-                      <small>Je les commande</small>
-                    </a>
-                  </p>
-                </div>
-              </div>
+              </form>
             </div>
           </div>
         </div>
