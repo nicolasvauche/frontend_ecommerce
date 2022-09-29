@@ -1,0 +1,24 @@
+.app-header {
+    position: sticky;
+    top: 0;
+    z-index: 10;
+    padding: 0.25rem 0.5rem 0.5rem;
+    font-family: $font-secondary;
+    font-size: 1.25rem;
+    letter-spacing: 1px;
+    text-align: center;
+    color: $color-white;
+    background-color: $color-primary;
+
+    @include respondTo(sm) {
+        @include displayFlex(space-between, flex-end);
+    }
+
+    @include respondTo(md) {
+        @include displayFlex(space-around, flex-end);
+    }
+
+    span {
+        color: $color-secondary;
+    }
+}

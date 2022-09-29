@@ -1,0 +1,69 @@
+.app-navigation {
+    @include displayFlex(center, center, row, 1rem);
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    background-color: $color-primary;
+
+    @include respondTo(sm) {
+        position: static;
+        bottom: initial;
+        left: initial;
+        width: auto;
+        background-color: transparent;
+    }
+
+    a {
+        @include displayFlex(flex-end, center, column);
+        flex: 1;
+        padding: 0.75rem;
+        text-decoration: none;
+
+        @include respondTo(sm) {
+            flex: auto;
+            padding-bottom: 0;
+        }
+
+        i {
+            font-size: 1.5rem;
+            color: $color-white;
+            transform: translateY(-2px);
+            transition: all 0.5s;
+
+            @include respondTo(md) {
+                color: $color-secondary;
+            }
+        }
+
+        span {
+            margin-top: 0.25rem;
+            font-family: $font-primary;
+            font-size: 0.5rem;
+            font-weight: bold;
+            text-transform: uppercase;
+            color: $color-white;
+            transition: all 0.5s;
+
+            @include respondTo(sm) {
+                font-family: $font-secondary;
+                font-size: 1rem;
+            }
+
+            @include respondTo(md) {
+                font-size: 0.75rem;
+            }
+        }
+
+        &:hover,
+        &.active {
+            i {
+                color: $color-secondary;
+            }
+
+            span {
+                color: $color-secondary;
+            }
+        }
+    }
+}

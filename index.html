@@ -7,6 +7,7 @@
 
     <title>Habille tes pieds avec SHOE</title>
 
+    <!-- Favicons -->
     <link rel="apple-touch-icon" sizes="152x152" href="/apple-touch-icon.png" />
     <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png" />
     <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png" />
@@ -15,49 +16,193 @@
     <meta name="msapplication-TileColor" content="#00aba9" />
     <meta name="theme-color" content="#ffffff" />
 
+    <!-- Google Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
-      href="https://fonts.googleapis.com/css2?family=Audiowide&family=Roboto:wght@400;700&display=swap"
+      href="https://fonts.googleapis.com/css2?family=Anton&family=Roboto:wght@400;700&display=swap"
       rel="stylesheet"
     />
+
+    <!-- Fontawesome -->
+    <script
+      src="https://kit.fontawesome.com/b916232238.js"
+      crossorigin="anonymous"
+    ></script>
 
     <link rel="stylesheet" href="assets/css/styles.min.css" />
   </head>
   <body>
-    <header>Coucou</header>
+    <!-- Application Header -->
+    <header class="app-header">
+      <a href="./" class="app-brandname">
+        Habille tes <span>pieds</span> avec
+        <img src="assets/img/logo_w.png" alt="Logo SHOE" />
+      </a>
 
-    <section>
-      <div>
-        <figure>
-          <img src="assets/img/catalog/shoes/shoes01.jpg" alt="SHOE 01" />
-        </figure>
-        <h3>Tranquille en ville</h3>
-      </div>
-      <div>
-        <figure>
-          <img src="assets/img/catalog/shoes/shoes02.jpg" alt="SHOE 02" />
-        </figure>
-        <h3>Va faire du sport</h3>
-      </div>
-      <div>
-        <figure>
-          <img src="assets/img/catalog/shoes/shoes03.jpg" alt="SHOE 03" />
-        </figure>
-        <h3>Passe partout</h3>
-      </div>
-      <div>
-        <figure>
-          <img src="assets/img/catalog/shoes/shoes04.jpg" alt="SHOE 04" />
-        </figure>
-        <h3>STR33TF00T STYLE</h3>
-      </div>
-    </section>
+      <!-- Application Navigation -->
+      <nav class="app-navigation">
+        <a href="./" class="active">
+          <i class="fa-solid fa-house"></i>
+          <span>Accueil</span>
+        </a>
+        <a href="#">
+          <i class="fa-solid fa-user"></i>
+          <span>Compte</span>
+        </a>
+        <a href="#">
+          <i class="fa-solid fa-user-lock"></i>
+          <span>Connexion</span>
+        </a>
+        <a href="#">
+          <i class="fa-solid fa-user-plus"></i>
+          <span>Inscription</span>
+        </a>
+      </nav>
+    </header>
 
-    <footer>
-      <figure>
-        <img src="assets/img/bg_sign.jpg" alt="Home" />
-      </figure>
+    <!-- Application Main -->
+    <main class="app-main">
+      <!-- Page Cover -->
+      <section class="cover">
+        <div class="app-slider">
+          <div class="controls">
+            <a href="#">
+              <i class="fa-solid fa-circle"></i>
+            </a>
+            <a href="#">
+              <i class="fa-regular fa-circle"></i>
+            </a>
+            <a href="#">
+              <i class="fa-regular fa-circle"></i>
+            </a>
+            <a href="#">
+              <i class="fa-regular fa-circle"></i>
+            </a>
+          </div>
+          <div class="slide">
+            <div class="slide-body">
+              <h1 class="slide-title">Tu vas pas y aller pieds nus</h1>
+              <p class="slide-text">
+                Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                Dignissimos officiis error repellendus nobis, esse cupiditate
+                voluptates officia inventore.
+              </p>
+              <div class="slide-footer">
+                <a href="#" class="app-btn"> Plus de détails </a>
+                <a href="#" class="app-btn cta"> Je commande </a>
+              </div>
+            </div>
+            <img
+              src="assets/img/catalog/shoes/shoes01_r.png"
+              class="slide-img-top"
+              alt="Fabriqué en France"
+            />
+          </div>
+        </div>
+      </section>
+
+      <!-- Page Card -->
+      <section class="card">
+        <h2>Découvre ta nouvelle marque</h2>
+        <p>
+          Lorem ipsum dolor sit, amet consectetur adipisicing elit. Libero dicta
+          iste blanditiis architecto omnis exercitationem dignissimos.
+          Laboriosam, sequi. Quisquam quaerat saepe velit est quos hic quasi
+          dolorum optio porro consequatur!
+        </p>
+        <p>
+          <img src="assets/img/made_in_france.png" alt="Fabriqué en France" />
+        </p>
+        <p>
+          Lorem ipsum dolor sit, amet consectetur adipisicing elit. Libero dicta
+          iste blanditiis architecto omnis exercitationem dignissimos.
+          Laboriosam, sequi. Quisquam quaerat saepe velit est quos hic quasi
+          dolorum optio porro consequatur!
+        </p>
+        <a href="#" class="app-btn cta"> Je crée mon compte ! </a>
+      </section>
+    </main>
+
+    <!-- Application Footer -->
+    <footer class="app-footer">
+      <!-- Footer Icons -->
+      <div class="prefoot">
+        <div class="icon">
+          <i class="fa-solid fa-igloo"></i>
+          <h3>Achète au chaud</h3>
+          <p>
+            De chez toi, sur le canapé de tes amis, aux toilettes, dans le bus,
+            ou pendant ta pause déjeuner : avec nous c'est où tu veux, quand tu
+            veux.
+          </p>
+        </div>
+        <div class="icon">
+          <i class="fa-solid fa-money-bill-wave"></i>
+          <h3>Paie content</h3>
+          <p>
+            Chez nous, le paiement en ligne c'est comme d'habitude chez les gens
+            sérieux : c'est sécurisé et c'est selon TES habitudes : carte
+            bancaire, Paypal, etc…
+          </p>
+        </div>
+        <div class="icon">
+          <i class="fa-solid fa-truck-fast"></i>
+          <h3>Attends un peu</h3>
+          <p>
+            Tu vas bientôt recevoir tes nouvelles chaussures SHOE ! Tu n'en peux
+            plus d'attendre, et oh oui, on te comprend teeeellement&nbsp;!
+          </p>
+        </div>
+        <div class="icon">
+          <i class="fa-solid fa-rotate-left"></i>
+          <h3>Renvoie-les</h3>
+          <p>
+            Si nous, ou toi, ou tout le monde s'est trompé, hé bien pas de souci
+            ! Les retours sont rapides et gratuits, on ne va pas s'embrouiller
+            non plus…
+          </p>
+        </div>
+      </div>
+
+      <!-- Footer Newsletter -->
+      <div class="newsletter">
+        <a href="./" class="app-brandname">
+          <img src="assets/img/logo.png" alt="Logo SHOE" />
+          Habille tes <span>pieds</span>
+        </a>
+
+        <form class="app-form">
+          <h3>Tu veux du courrier ?</h3>
+          <div class="form-group">
+            <label for="newsletterEmail" class="icon">
+              <i class="fa-solid fa-envelope"></i>
+            </label>
+            <input
+              type="email"
+              name="email"
+              id="newsletterEmail"
+              class="form-control"
+              placeholder="ex: sophie@dupont.com"
+              required
+              aria-required="true"
+            />
+            <button type="submit" class="app-btn">
+              <i class="fa-solid fa-play"></i>
+            </button>
+          </div>
+        </form>
+      </div>
+
+      <!-- Footer Legals -->
+      <div class="legals">
+        <p>
+          <a href="#">Mentions légales</a><span class="divider">&nbsp;|&nbsp;</span>
+          <a href="#">Protection des données</a><span class="divider">&nbsp;|&nbsp;</span>
+          <a href="#">Conditions Générales de vente</a>
+        </p>
+        <p>© 2022 SHOE. Tous Droits Réservés.</p>
+      </div>
     </footer>
   </body>
 </html>

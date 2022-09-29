@@ -1,0 +1,120 @@
+.app-footer {
+    margin-bottom: 3.25rem;
+    color: $color-white;
+
+    @include respondTo(sm) {
+        margin-bottom: 0;
+    }
+
+    .prefoot {
+        @include displayGrid(1);
+        padding: 2rem;
+        background-color: $color-secondary;
+
+        @include respondTo(sm) {
+            @include displayGrid(2, 2rem);
+        }
+
+        @include respondTo(md) {
+            @include displayGrid(4, 2rem);
+        }
+
+        .icon {
+            padding: 1rem;
+            text-align: center;
+            background-color: rgba($color-primary, 0.15);
+
+            i {
+                margin-bottom: 1rem;
+                font-size: 5.5rem;
+            }
+
+            h3 {
+                color: $color-white;
+            }
+
+            p {
+                font-size: 0.85rem;
+                color: rgba($color-white, 0.75);
+            }
+        }
+    }
+
+    .newsletter {
+        padding: 0 1rem 1rem;
+        text-align: center;
+        background-color: $color-secondary;
+
+        .app-form {
+            margin: 2rem 0 1.5rem;
+            text-align: center;
+
+            h3 {
+                display: inline-block;
+                padding-bottom: 0;
+                margin-bottom: 0.5rem;
+                color: $color-white;
+                border-bottom: none;
+            }
+
+            .form-group {
+                .app-btn {
+                    padding: 0.125rem 0.25rem;
+                    font-family: initial;
+                    border: none;
+                }
+            }
+        }
+
+        .app-brandname {
+            display: block;
+            margin-bottom: 1rem;
+            font-family: $font-secondary;
+            font-size: 1.75rem;
+            letter-spacing: 1px;
+            color: $color-primary;
+
+            span {
+                color: $color-white;
+            }
+
+            img {
+                display: block;
+                margin: 0 auto 0.5rem;
+                height: 8rem;
+            }
+        }
+    }
+
+    .legals {
+        padding: 0.75rem 1rem 0.5rem;
+        background-color: $color-primary;
+
+        p {
+            font-size: 0.85rem;
+            text-align: center;
+
+            &:last-child {
+                margin-bottom: 0;
+            }
+
+            a {
+                display: block;
+                margin-bottom: 0.5rem;
+                color: inherit;
+
+                @include respondTo(sm) {
+                    display: inline;
+                }
+            }
+
+            .divider {
+                display: none;
+
+                @include respondTo(sm) {
+                    display: inline;
+                }
+            }
+        }
+    }
+}

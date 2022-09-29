@@ -1,0 +1,83 @@
+.app-slider {
+    position: relative;
+
+    .controls {
+        position: absolute;
+        top: 10%;
+        right: 1rem;
+
+        @include respondTo(sm) {
+            top: 50%;
+            transform: translateY(-50%);
+        }
+
+        a {
+            display: block;
+            margin: 0.5rem 0;
+            padding: 0.25rem;
+            color: $color-white;
+
+            @include respondTo(md) {
+                color: $color-primary;
+            }
+
+            i {
+                font-size: 1.25rem;
+                
+                &.fa-solid {
+                    color: $color-secondary;
+                }
+            }
+        }
+    }
+
+    .slide {
+        @include displayFlex(space-between, center, column-reverse);
+
+        @include respondTo(sm) {
+            @include displayFlex(space-between, center, row);
+        }
+
+        @include respondTo(md) {
+            @include displayFlex(space-around, center, row);
+        }
+
+        .slide-body {
+            text-align: center;
+
+            @include respondTo(sm) {
+                @include displayFlex(space-between, center, column);
+            }
+
+            @include respondTo(md) {
+                max-width: 30%;
+            }
+        }
+
+        .slide-img-top {
+            width: 33vh;
+            height: 33vh;
+            object-fit: cover;
+
+            @include respondTo(md) {
+                transform: translateX(-10%);
+                width: 60vh;
+                height: 60vh;
+            }
+        }
+
+        .slide-title {
+            margin: 1rem 0;
+        }
+
+        .slide-text {
+            margin: 0 1rem;
+            font-size: 0.85rem;
+        }
+
+        .slide-footer {
+            @include displayFlex(space-around, center, row, 1rem);
+            margin: 1.5rem 0 0;
+        }
+    }
+}
