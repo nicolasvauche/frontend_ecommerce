@@ -1,0 +1,80 @@
+html {
+    body {
+        margin: 0;
+        font-family: Arial, Helvetica, sans-serif;
+
+        img {
+            max-width: 100%;
+        }
+
+        header {
+            padding: 2rem;
+            min-height: 50vh;
+            color: white;
+            background: url("../img/bg_cover.png") no-repeat;
+            background-size: 100%;
+            background-size: cover;
+        }
+
+        section {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            grid-gap: 2rem;
+            padding: 20vh 2vh;
+
+            div {
+                padding: 1.5rem 1.5rem 6rem;
+                text-align: center;
+                border: 1px solid #cfcfcf;
+                box-shadow: 0px 0px 10px -2px rgba(0, 0, 0, 0.5);
+                transition: transform 0.5s;
+
+                &:hover {
+                    &:nth-child(odd) {
+                        figure {
+                            img {
+                                transform: rotate(-5deg) scale(1.1);
+                            }
+                        }
+                    }
+
+                    &:nth-child(even) {
+                        figure {
+                            img {
+                                transform: rotate(5deg) scale(1.1);
+                            }
+                        }
+                    }
+                }
+
+                figure {
+                    margin: 0;
+                    padding: 0;
+                    overflow: hidden;
+
+                    img {
+                        height: 30vh;
+                        width: 100%;
+                        object-fit: cover;
+                        object-position: center center;
+                        transition: transform 0.5s;
+                    }
+                }
+            }
+        }
+
+        footer {
+            padding: 20vh 2vh;
+            text-align: center;
+
+            figure {
+                border-top: 2rem solid #ff4e5b;
+                border-left: 2rem solid #ff4e5b;
+
+                img {
+                    display: block;
+                }
+            }
+        }
+    }
+}
