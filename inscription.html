@@ -91,7 +91,7 @@
         <form class="app-form">
           <div class="grid">
             <div class="form-group">
-              <label for="userFirstname">
+              <label for="userFirstname" title="Ton prénom">
                 <i class="fa-solid fa-user"></i>
               </label>
               <input
@@ -99,8 +99,9 @@
                 id="userFirstname"
                 class="form-control"
                 placeholder="ex: Sophie"
+                aria-labelledby="firstnameHelp"
               />
-              <p>
+              <p id="firstnameHelp">
                 <small>
                   Entre ton prénom<br />
                   On s'en souviendra
@@ -108,7 +109,7 @@
               </p>
             </div>
             <div class="form-group">
-              <label for="userLastname">
+              <label for="userLastname" title="Ton nom">
                 <i class="fa-solid fa-user"></i>
               </label>
               <input
@@ -116,8 +117,9 @@
                 id="userLastname"
                 class="form-control"
                 placeholder="ex: Dupont"
+                aria-labelledby="lastnameHelp"
               />
-              <p>
+              <p id="lastnameHelp">
                 <small>
                   Entre ton nom<br />
                   C'est utile pour la livraison
@@ -126,18 +128,19 @@
             </div>
           </div>
           <div class="form-group">
-            <label for="userEmail" class="required">
+            <label for="userEmail" class="required" title="Ton adresse e-mail">
               <i class="fa-solid fa-envelope"></i>
             </label>
             <input
               type="email"
               id="userEmail"
               class="form-control"
+              placeholder="ex: sophie@dupont.com"
               required
               aria-required="true"
-              placeholder="ex: sophie@dupont.com"
+              aria-labelledby="emailHelp"
             />
-            <p>
+            <p id="emailHelp">
               <small>
                 Entre ton adresse e-mail<br />
                 Et rappelle-t-en s'il te plaît
@@ -146,7 +149,7 @@
           </div>
           <div class="grid">
             <div class="form-group">
-              <label for="userPassword" class="required">
+              <label for="userPassword" class="required" title="Ton mot de passe">
                 <i class="fa-solid fa-key"></i>
               </label>
               <input
@@ -155,8 +158,9 @@
                 class="form-control"
                 required
                 aria-required="true"
+                aria-labelledby="passwordHelp"
               />
-              <p>
+              <p id="passwordHelp">
                 <small>
                   Entre ton mot de passe<br />
                   Il doit contenir au moins 8 caractères<br />
@@ -165,7 +169,7 @@
               </p>
             </div>
             <div class="form-group">
-              <label for="userPasswordConfirm" class="required">
+              <label for="userPasswordConfirm" class="required" title="Confirme ton mot de passe">
                 <i class="fa-solid fa-key"></i>
               </label>
               <input
@@ -174,8 +178,9 @@
                 class="form-control"
                 required
                 aria-required="true"
+                aria-labelledby="passwordConfirmHelp"
               />
-              <p>
+              <p id="passwordConfirmHelp">
                 <small>
                   Confirme ton mot de passe<br />
                   il doit être identique au premier<br />
@@ -254,7 +259,11 @@
         <form class="app-form">
           <h3>Tu veux du courrier ?</h3>
           <div class="form-group">
-            <label for="newsletterEmail" class="icon">
+            <label
+              for="newsletterEmail"
+              class="icon"
+              title="Ton adresse e-mail"
+            >
               <i class="fa-solid fa-envelope"></i>
             </label>
             <input
@@ -266,7 +275,7 @@
               required
               aria-required="true"
             />
-            <button type="submit" class="app-btn">
+            <button type="submit" class="app-btn" title="Abonne-toi">
               <i class="fa-solid fa-play"></i>
             </button>
           </div>

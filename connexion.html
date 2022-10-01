@@ -88,23 +88,24 @@
 
         <form class="app-form">
           <div class="form-group">
-            <label for="userEmail" class="required">
+            <label for="userEmail" class="required" title="Ton adresse e-mail">
               <i class="fa-solid fa-envelope"></i>
             </label>
             <input
               type="email"
               id="userEmail"
               class="form-control"
+              placeholder="ex: sophie@dupont.com"
               required
               aria-required="true"
-              placeholder="ex: sophie@dupont.com"
+              aria-labelledby="emailHelp"
             />
-            <p>
+            <p id="emailHelp">
               <small>Entre ton adresse e-mail</small>
             </p>
           </div>
           <div class="form-group">
-            <label for="userPassword" class="required">
+            <label for="userPassword" class="required" title="Ton mot de passe">
               <i class="fa-solid fa-key"></i>
             </label>
             <input
@@ -113,8 +114,9 @@
               class="form-control"
               required
               aria-required="true"
+              aria-labelledby="passwordHelp"
             />
-            <p>
+            <p id="passwordHelp">
               <small>Entre ton mot de passe</small>
             </p>
           </div>
@@ -198,7 +200,11 @@
         <form class="app-form">
           <h3>Tu veux du courrier ?</h3>
           <div class="form-group">
-            <label for="newsletterEmail" class="icon">
+            <label
+              for="newsletterEmail"
+              class="icon"
+              title="Ton adresse e-mail"
+            >
               <i class="fa-solid fa-envelope"></i>
             </label>
             <input
@@ -210,12 +216,11 @@
               required
               aria-required="true"
             />
-            <button type="submit" class="app-btn">
+            <button type="submit" class="app-btn" title="Abonne-toi">
               <i class="fa-solid fa-play"></i>
             </button>
           </div>
         </form>
-      </div>
 
       <!-- Footer Legals -->
       <div class="legals">
