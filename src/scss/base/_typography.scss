@@ -45,7 +45,6 @@ hr {
 
 p {
     margin-bottom: 1rem;
-    font-size: 110%;
     line-height: 1.3rem;
     text-align: center;
 
@@ -89,6 +88,10 @@ a {
 }
 
 .required {
-    color: red;
+    color: $color-danger;
     font-weight: bold;
+}
+
+.text-danger {
+    color: $color-danger !important;
 }

@@ -1,0 +1,44 @@
+.app-subnavigation {
+    padding: 2rem 1rem;
+    text-align: center;
+
+    @include respondTo(sm) {
+        text-align: left;
+    }
+
+    a {
+        display: block;
+        margin: 1rem 0;
+
+        i {
+            display: inline-block;
+            width: 1.25rem;
+            color: $color-primary;
+            transform: translateY(-1px);
+        }
+
+        &.active {
+            color: $color-secondary;
+
+            i {
+                color: $color-secondary;
+            }
+        }
+
+        span {
+            display: none;
+
+            @include respondTo(sm) {
+                display: inline;
+            }
+        }
+    }
+
+    hr {
+        display: none;
+
+        @include respondTo(sm) {
+            display: block;
+        }
+    }
+}

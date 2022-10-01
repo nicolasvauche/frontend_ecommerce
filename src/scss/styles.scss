@@ -2,7 +2,9 @@
 
 @import "base/reset", "base/typography";
 
-@import "layout/default", "layout/header", "layout/navigation", "layout/main", "layout/footer";
+@import "layout/default", "layout/header", "layout/navigation", "layout/main", "layout/footer", "layout/subnavigation";
 
 @import "components/brandname", "components/sliders", "components/buttons", "components/forms", "components/alerts",
     "components/images";
+
+@import "pages/compte";

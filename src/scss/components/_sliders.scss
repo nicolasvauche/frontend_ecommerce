@@ -23,7 +23,7 @@
 
             i {
                 font-size: 1.25rem;
-                
+
                 &.fa-solid {
                     color: $color-secondary;
                 }
@@ -58,11 +58,21 @@
             width: 33vh;
             height: 33vh;
             object-fit: cover;
+            transform: rotate(15deg);
+            transition: all 0.5s;
+
+            &:hover {
+                transform: rotate(0deg);
+            }
 
             @include respondTo(md) {
-                transform: translateX(-10%);
+                transform: translateX(-10%) rotate(15deg);
                 width: 60vh;
                 height: 60vh;
+
+                &:hover{
+                    transform: translateX(-10%) rotate(0deg);
+                }
             }
         }
 

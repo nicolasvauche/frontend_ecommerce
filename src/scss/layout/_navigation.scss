@@ -59,6 +59,7 @@
         &.active {
             i {
                 color: $color-secondary;
+                transform: translateY(-6px);
             }
 
             span {
