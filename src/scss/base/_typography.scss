@@ -37,6 +37,14 @@ h3 {
     border-bottom: 1px solid $color-white;
 }
 
+h4 {
+    font-family: $font-secondary;
+    font-weight: bold;
+    text-align: center;
+    line-height: 1.75rem;
+    letter-spacing: 1px;
+}
+
 hr {
     margin: 2rem 0;
     width: 100%;

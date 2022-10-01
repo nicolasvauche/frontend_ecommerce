@@ -27,6 +27,50 @@ html {
                                 margin-right: 2rem;
                                 width: 70vw;
                             }
+
+                            & > .grid {
+                                width: 100%;
+                            }
+
+                            .addresses {
+                                margin-top: 1rem;
+
+                                &:first-child {
+                                    h3 {
+                                        color: $color-info;
+                                    }
+
+                                    .grid-item {
+                                        & > i,
+                                        .item-title {
+                                            color: $color-info;
+                                        }
+                                    }
+                                }
+
+                                &:last-child {
+                                    h3 {
+                                        color: $color-secondary;
+                                    }
+
+                                    .grid-item {
+                                        & > i,
+                                        .item-title {
+                                            color: $color-secondary;
+                                        }
+                                    }
+                                }
+
+                                .grid {
+                                    @include respondTo(sm) {
+                                        @include displayGrid(1);
+                                    }
+
+                                    @include respondTo(md) {
+                                        @include displayGrid(2);
+                                    }
+                                }
+                            }
                         }
                     }
                 }
