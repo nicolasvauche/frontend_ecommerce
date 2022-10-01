@@ -76,6 +76,14 @@ a {
     }
 }
 
+.grid {
+    @include displayGrid(1);
+
+    @include respondTo(sm) {
+        @include displayGrid(2, 1rem);
+    }
+}
+
 .text-justify {
     @include justify();
 }

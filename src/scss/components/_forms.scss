@@ -9,6 +9,11 @@
             flex-basis: 100%;
             margin-bottom: 0;
             text-align: right;
+            line-height: 1rem;
+
+            small {
+                font-size: 0.75rem !important;
+            }
         }
 
         label {
@@ -23,8 +28,8 @@
                 color: $color-secondary;
             }
 
-            &.required{
-                &:after{
+            &.required {
+                &:after {
                     position: absolute;
                     top: 0.4rem;
                     right: -0.4rem;
@@ -45,11 +50,15 @@
             color: $color-primary;
             background-color: $color-white;
             border: 1px solid $color-secondary;
+
+            @include respondTo(sm) {
+                text-align: center;
+            }
         }
     }
 
-    .app-btn{
-        &.cta{
+    .app-btn {
+        &.cta {
             display: block;
             margin: 0 0 0 auto !important;
             padding: 0.5rem 1.5rem;

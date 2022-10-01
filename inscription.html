@@ -5,7 +5,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-    <title>Connecte-toi à ton compte SHOE</title>
+    <title>Crée ton compte SHOE</title>
 
     <!-- Favicons -->
     <link rel="apple-touch-icon" sizes="152x152" href="apple-touch-icon.png" />
@@ -50,11 +50,11 @@
           <i class="fa-solid fa-user"></i>
           <span>Compte</span>
         </a>
-        <a href="connexion.html" class="active">
+        <a href="connexion.html">
           <i class="fa-solid fa-user-lock"></i>
           <span>Connexion</span>
         </a>
-        <a href="inscription.html">
+        <a href="inscription.html" class="active">
           <i class="fa-solid fa-user-plus"></i>
           <span>Inscription</span>
         </a>
@@ -64,8 +64,9 @@
     <!-- Application Alert -->
     <div class="app-alert info">
       <strong>Le savais-tu ? </strong>
-      Si tu as oublié ton mot de passe, félicitations !<br />
-      C'est qu'il était difficile à retenir
+      Si tu crées ton compte, à chaque fois que tu te connecteras
+      <small>(si tu te souviens de ton mot de passe)</small>, tu retrouveras
+      tout comme avant
       <i class="fa-solid fa-face-smile-wink fa-lg"></i>
     </div>
 
@@ -73,11 +74,12 @@
     <main class="app-main">
       <!-- Page Card -->
       <section class="card">
-        <h2>Connecte-toi à ton compte SHOE</h2>
+        <h2>Crée ton compte SHOE</h2>
         <p class="text-justify">
-          Si tu as déjà créé ton compte SHOE, et si tu te souviens de ton mot de
-          passe <small>(bravo)</small>, alors connecte-toi, et retrouve tout comme tu l'avais
-          laissé en partant la dernière fois. Pas mal, non ?
+          Avec ton compte SHOE, tu pourras te connecter
+          <small>(déjà c'est cool)</small>, et retrouver tes anciennes
+          commandes, ton panier, tes adresses et plein d'autres choses bien
+          douillettes. On te choye chez SHOE !
         </p>
 
         <p>
@@ -87,6 +89,42 @@
         </p>
 
         <form class="app-form">
+          <div class="grid">
+            <div class="form-group">
+              <label for="userFirstname">
+                <i class="fa-solid fa-user"></i>
+              </label>
+              <input
+                type="text"
+                id="userFirstname"
+                class="form-control"
+                placeholder="ex: Sophie"
+              />
+              <p>
+                <small>
+                  Entre ton prénom<br />
+                  On s'en souviendra
+                </small>
+              </p>
+            </div>
+            <div class="form-group">
+              <label for="userLastname">
+                <i class="fa-solid fa-user"></i>
+              </label>
+              <input
+                type="text"
+                id="userLastname"
+                class="form-control"
+                placeholder="ex: Dupont"
+              />
+              <p>
+                <small>
+                  Entre ton nom<br />
+                  C'est utile pour la livraison
+                </small>
+              </p>
+            </div>
+          </div>
           <div class="form-group">
             <label for="userEmail" class="required">
               <i class="fa-solid fa-envelope"></i>
@@ -100,26 +138,54 @@
               placeholder="ex: sophie@dupont.com"
             />
             <p>
-              <small>Entre ton adresse e-mail</small>
+              <small>
+                Entre ton adresse e-mail<br />
+                Et rappelle-t-en s'il te plaît
+              </small>
             </p>
           </div>
-          <div class="form-group">
-            <label for="userPassword" class="required">
-              <i class="fa-solid fa-key"></i>
-            </label>
-            <input
-              type="password"
-              id="userPassword"
-              class="form-control"
-              required
-              aria-required="true"
-            />
-            <p>
-              <small>Entre ton mot de passe</small>
-            </p>
+          <div class="grid">
+            <div class="form-group">
+              <label for="userPassword" class="required">
+                <i class="fa-solid fa-key"></i>
+              </label>
+              <input
+                type="password"
+                id="userPassword"
+                class="form-control"
+                required
+                aria-required="true"
+              />
+              <p>
+                <small>
+                  Entre ton mot de passe<br />
+                  Il doit contenir au moins 8 caractères<br />
+                  Il faut aussi des chiffres et des majuscules
+                </small>
+              </p>
+            </div>
+            <div class="form-group">
+              <label for="userPasswordConfirm" class="required">
+                <i class="fa-solid fa-key"></i>
+              </label>
+              <input
+                type="password"
+                id="userPasswordConfirm"
+                class="form-control"
+                required
+                aria-required="true"
+              />
+              <p>
+                <small>
+                  Confirme ton mot de passe<br />
+                  il doit être identique au premier<br />
+                  avec des machins comme *, +, /, $, etc…
+                </small>
+              </p>
+            </div>
           </div>
           <button type="submit" class="app-btn cta">
-            Connexion
+            Inscription
             <i class="fa-solid fa-play"></i>
           </button>
         </form>
@@ -128,19 +194,9 @@
 
         <p>
           <small>
-            <a href="#">
-              J'ai oublié mon mot de paaaasse
-              <i class="fa-regular fa-face-sad-cry"></i>
-            </a>
-          </small>
-        </p>
-
-        <p>
-          <small>
-            <a href="inscription.html">
-              Je n'ai pas encore créé mon compte SHOE
-              <i class="fa-regular fa-face-surprise"></i>
-              Vite vite je le fais !
+            <a href="connexion.html">
+              Ah mince <i class="fa-regular fa-face-rolling-eyes"></i> J'ai déjà
+              un compte SHOE, je veux me connecter plutôt
             </a>
           </small>
         </p>
