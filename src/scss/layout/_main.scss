@@ -20,6 +20,7 @@
 
             @include respondTo(sm) {
                 margin: 2rem auto;
+                padding: 2rem;
                 width: 75vw;
             }
 
@@ -27,9 +28,35 @@
                 width: 50vw;
             }
 
+            div {
+                &.flex {
+                    flex-direction: column-reverse;
+                    margin-bottom: 1rem;
+                    width: 100%;
+
+                    @include respondTo(sm) {
+                        flex-direction: row;
+                        align-items: flex-end;
+                    }
+
+                    .app-img {
+                        margin-bottom: 1rem;
+
+                        @include respondTo(sm) {
+                            margin-bottom: 0;
+                        }
+                    }
+
+                    img {
+                        margin-bottom: 1rem;
+                        height: 25vh;
+                    }
+                }
+            }
+
             .app-btn {
                 &.cta {
-                    margin: 2rem -2rem 0;
+                    margin: 2rem 0 0;
                 }
             }
         }

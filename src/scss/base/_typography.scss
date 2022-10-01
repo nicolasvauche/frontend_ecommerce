@@ -37,16 +37,50 @@ h3 {
     border-bottom: 1px solid $color-white;
 }
 
+hr {
+    margin: 2rem 0;
+    width: 100%;
+    border-color: $color-secondary;
+}
+
 p {
-    margin-bottom: 1.5rem;
+    margin-bottom: 1rem;
     font-size: 110%;
     line-height: 1.3rem;
-    text-align: justify;
-    hyphens: auto;
-    -webkit-hyphens: auto;
-    word-spacing: -0.05em;
+    text-align: center;
 
     &:last-child {
         margin-bottom: 0;
     }
+}
+
+small {
+    font-size: 0.85em !important;
+}
+
+a {
+    color: $color-info;
+    text-decoration: none;
+    transition: all 0.5s;
+
+    &:hover {
+        color: $color-secondary;
+    }
+}
+
+.flex {
+    @include displayFlex(space-between, center, column);
+
+    @include respondTo(sm) {
+        @include displayFlex(space-between, center, row);
+    }
+}
+
+.text-justify {
+    @include justify();
+}
+
+.required {
+    color: red;
+    font-weight: bold;
 }

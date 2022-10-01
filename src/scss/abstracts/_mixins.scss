@@ -12,6 +12,13 @@
     grid-gap: $gap;
 }
 
+@mixin justify() {
+    text-align: justify !important;
+    hyphens: auto;
+    -webkit-hyphens: auto;
+    word-spacing: -0.05em;
+}
+
 @mixin respondTo($breakpoint) {
     @if ($breakpoint == sm) {
         @media (min-width: 768px) {

@@ -1,0 +1,17 @@
+.app-alert {
+    padding: 1rem 0.5rem;
+    font-size: 0.9rem;
+    line-height: 1.25rem;
+    text-align: center;
+
+    &.info {
+        color: $color-white;
+        background-color: $color-info;
+
+        strong {
+            display: block;
+            font-family: $font-secondary;
+            letter-spacing: 1px;
+        }
+    }
+}
