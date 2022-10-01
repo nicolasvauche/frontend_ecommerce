@@ -5,7 +5,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-    <title>Ton compte SHOE</title>
+    <title>Tes commandes - Ton compte SHOE</title>
 
     <!-- Favicons -->
     <link rel="apple-touch-icon" sizes="152x152" href="apple-touch-icon.png" />
@@ -46,7 +46,7 @@
           <i class="fa-solid fa-house"></i>
           <span>Accueil</span>
         </a>
-        <a href="compte.html" class="active">
+        <a href="mon-compte.html" class="active">
           <i class="fa-solid fa-user"></i>
           <span>Compte</span>
         </a>
@@ -64,7 +64,7 @@
     <!-- Application Alert -->
     <div class="app-alert info">
       <strong>Le savais-tu ? </strong>
-      Si tu nous donnes ta date de naissance, on te souhaitera ton anniversaire
+      Tu peux re-commander des chaussures si tu en veux une autre paire
       <i class="fa-solid fa-face-smile-wink fa-lg"></i>
     </div>
 
@@ -73,24 +73,24 @@
       <div class="grid">
         <!-- Sub Menu Espace client -->
         <div class="app-subnavigation" role="navigation">
-          <a href="compte.html" class="active">
+          <a href="mon-compte.html">
             <i class="fa-solid fa-user"></i>
             <span>Mon compte</span>
           </a>
-          <a href="adresses.html">
+          <a href="mes-adresses.html">
             <i class="fa-solid fa-address-book"></i>
             <span>Mes adresses</span>
           </a>
-          <a href="precommandes.html">
+          <a href="mes-precommandes.html">
             <i class="fa-solid fa-person-praying"></i>
             <span>Mes précommandes</span>
           </a>
-          <a href="commandes.html">
+          <a href="mes-commandes.html" class="active">
             <i class="fa-solid fa-chalkboard-user"></i>
             <span>Mes commandes</span>
           </a>
           <hr />
-          <a href="./">
+          <a href="./" onclick="return window.confirm('Tu veux partir ?');">
             <i class="fa-solid fa-user-slash text-danger"></i>
             <span>Déconnexion</span>
           </a>
@@ -98,119 +98,16 @@
 
         <!-- Page Card -->
         <section class="card">
-          <h2>Bienvenue chez toi Sophie</h2>
+          <h2>Tes commandes</h2>
           <p class="text-justify">
-            Tu as créé ton compte SHOE et tu as réussi à t'y connecter. Bravo !
-            Repère le petit menu supplémentaire sur la page, et navigue au sein
-            de ton espace douillet : tes infos <small>(ici même)</small>, tes
-            adresses, tes commandes, etc…
-          </p>
-          <p>
-            <small>
-              Ça <span class="required">*</span>, ça veut dire obligatoire !
-            </small>
+            Waou, t'en as des belles chaussures
+            <i class="fa-regular fa-face-grin-hearts"></i><br />
+            Sur cette page, retrouve tout ce que tu as acheté chez SHOE,
+            recommande nos produits, re-commande nos produits, enfin fais ce que
+            tu veux…
           </p>
 
-          <form class="app-form">
-            <div class="grid">
-              <div class="form-group">
-                <label for="userFirstname">
-                  <i class="fa-solid fa-user"></i>
-                </label>
-                <input
-                  type="text"
-                  id="userFirstname"
-                  class="form-control"
-                  placeholder="ex: Sophie"
-                  value="Sophie"
-                />
-                <p>
-                  <small>
-                    C'est ton prénom<br />
-                    On s'en souvient t'as vu
-                  </small>
-                </p>
-              </div>
-              <div class="form-group">
-                <label for="userLastname">
-                  <i class="fa-solid fa-user"></i>
-                </label>
-                <input
-                  type="text"
-                  id="userLastname"
-                  class="form-control"
-                  placeholder="ex: Dupont"
-                  value="Dupont"
-                />
-                <p>
-                  <small>
-                    C'est ton nom<br />
-                    Très utile pour la livraison
-                  </small>
-                </p>
-              </div>
-            </div>
-            <div class="form-group">
-              <label for="userEmail" class="required">
-                <i class="fa-solid fa-envelope"></i>
-              </label>
-              <input
-                type="email"
-                id="userEmail"
-                class="form-control"
-                required
-                aria-required="true"
-                placeholder="ex: sophie@dupont.com"
-                value="sophie@dupont.com"
-              />
-              <p>
-                <small>
-                  C'est ton adresse e-mail<br />
-                  C'est avec ça que tu te connectes
-                </small>
-              </p>
-            </div>
-            <div class="grid">
-              <div class="form-group">
-                <label for="userPassword">
-                  <i class="fa-solid fa-key"></i>
-                </label>
-                <input
-                  type="password"
-                  id="userPassword"
-                  class="form-control"
-                />
-                <p>
-                  <small>
-                    Modifie ton mot de passe<br />
-                    Il doit contenir au moins 8 caractères<br />
-                    Il faut aussi des chiffres et des majuscules
-                  </small>
-                </p>
-              </div>
-              <div class="form-group">
-                <label for="userPasswordConfirm">
-                  <i class="fa-solid fa-key"></i>
-                </label>
-                <input
-                  type="password"
-                  id="userPasswordConfirm"
-                  class="form-control"
-                />
-                <p>
-                  <small>
-                    Confirme ton mot de passe<br />
-                    il doit être identique au premier<br />
-                    avec des machins comme *, +, /, $, etc…
-                  </small>
-                </p>
-              </div>
-            </div>
-            <button type="submit" class="app-btn cta">
-              Enregistrer
-              <i class="fa-solid fa-play"></i>
-            </button>
-          </form>
+          <p class="text-success">Aucune commande pour l'instant…</p>
         </section>
       </div>
     </main>

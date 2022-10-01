@@ -5,7 +5,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-    <title>Connecte-toi à ton compte SHOE</title>
+    <title>Ton compte SHOE</title>
 
     <!-- Favicons -->
     <link rel="apple-touch-icon" sizes="152x152" href="apple-touch-icon.png" />
@@ -32,7 +32,7 @@
 
     <link rel="stylesheet" href="assets/css/styles.min.css" />
   </head>
-  <body>
+  <body class="compte">
     <!-- Application Header -->
     <header class="app-header">
       <a href="./" class="app-brandname">
@@ -46,11 +46,11 @@
           <i class="fa-solid fa-house"></i>
           <span>Accueil</span>
         </a>
-        <a href="mon-compte.html">
+        <a href="mon-compte.html" class="active">
           <i class="fa-solid fa-user"></i>
           <span>Compte</span>
         </a>
-        <a href="connexion.html" class="active">
+        <a href="connexion.html">
           <i class="fa-solid fa-user-lock"></i>
           <span>Connexion</span>
         </a>
@@ -64,87 +64,151 @@
     <!-- Application Alert -->
     <div class="app-alert info">
       <strong>Le savais-tu ? </strong>
-      Si tu as oublié ton mot de passe, félicitations !<br />
-      C'est qu'il était difficile à retenir
+      Si tu nous donnes ta date de naissance, on te souhaitera ton anniversaire
       <i class="fa-solid fa-face-smile-wink fa-lg"></i>
     </div>
 
     <!-- Application Main -->
     <main class="app-main">
-      <!-- Page Card -->
-      <section class="card">
-        <h2>Connecte-toi à ton compte SHOE</h2>
-        <p class="text-justify">
-          Si tu as déjà créé ton compte SHOE, et si tu te souviens de ton mot de
-          passe <small>(bravo)</small>, alors connecte-toi, et retrouve tout comme tu l'avais
-          laissé en partant la dernière fois. Pas mal, non ?
-        </p>
+      <div class="grid">
+        <!-- Sub Menu Espace client -->
+        <div class="app-subnavigation" role="navigation">
+          <a href="mon-compte.html" class="active">
+            <i class="fa-solid fa-user"></i>
+            <span>Mon compte</span>
+          </a>
+          <a href="mes-adresses.html">
+            <i class="fa-solid fa-address-book"></i>
+            <span>Mes adresses</span>
+          </a>
+          <a href="mes-precommandes.html">
+            <i class="fa-solid fa-person-praying"></i>
+            <span>Mes précommandes</span>
+          </a>
+          <a href="mes-commandes.html">
+            <i class="fa-solid fa-chalkboard-user"></i>
+            <span>Mes commandes</span>
+          </a>
+          <hr />
+          <a href="./" onclick="return window.confirm('Tu veux partir ?');">
+            <i class="fa-solid fa-user-slash text-danger"></i>
+            <span>Déconnexion</span>
+          </a>
+        </div>
 
-        <p>
-          <small>
-            Ça <span class="required">*</span>, ça veut dire obligatoire !
-          </small>
-        </p>
+        <!-- Page Card -->
+        <section class="card">
+          <h2>Bienvenue chez toi Sophie</h2>
+          <p class="text-justify">
+            Tu as créé ton compte SHOE et tu as réussi à t'y connecter. Bravo !
+            Repère le petit menu supplémentaire sur la page, et navigue au sein
+            de ton espace douillet : tes infos <small>(ici même)</small>, tes
+            adresses, tes commandes, etc…
+          </p>
+          <p>
+            <small>
+              Ça <span class="required">*</span>, ça veut dire obligatoire !
+            </small>
+          </p>
 
-        <form class="app-form">
-          <div class="form-group">
-            <label for="userEmail" class="required">
-              <i class="fa-solid fa-envelope"></i>
-            </label>
-            <input
-              type="email"
-              id="userEmail"
-              class="form-control"
-              required
-              aria-required="true"
-              placeholder="ex: sophie@dupont.com"
-            />
-            <p>
-              <small>Entre ton adresse e-mail</small>
-            </p>
-          </div>
-          <div class="form-group">
-            <label for="userPassword" class="required">
-              <i class="fa-solid fa-key"></i>
-            </label>
-            <input
-              type="password"
-              id="userPassword"
-              class="form-control"
-              required
-              aria-required="true"
-            />
-            <p>
-              <small>Entre ton mot de passe</small>
-            </p>
-          </div>
-          <button type="submit" class="app-btn cta">
-            Connexion
-            <i class="fa-solid fa-play"></i>
-          </button>
-        </form>
-
-        <hr />
-
-        <p>
-          <small>
-            <a href="#">
-              J'ai oublié mon mot de paaaasse
-              <i class="fa-regular fa-face-sad-cry"></i>
-            </a>
-          </small>
-        </p>
-
-        <p>
-          <small>
-            <a href="inscription.html">
-              Je n'ai pas encore créé mon compte SHOE
-              <i class="fa-regular fa-face-surprise"></i>
-              Vite vite je le fais !
-            </a>
-          </small>
-        </p>
-      </section>
+          <form class="app-form">
+            <div class="grid">
+              <div class="form-group">
+                <label for="userFirstname">
+                  <i class="fa-solid fa-user"></i>
+                </label>
+                <input
+                  type="text"
+                  id="userFirstname"
+                  class="form-control"
+                  placeholder="ex: Sophie"
+                  value="Sophie"
+                />
+                <p>
+                  <small>
+                    C'est ton prénom<br />
+                    On s'en souvient t'as vu
+                  </small>
+                </p>
+              </div>
+              <div class="form-group">
+                <label for="userLastname">
+                  <i class="fa-solid fa-user"></i>
+                </label>
+                <input
+                  type="text"
+                  id="userLastname"
+                  class="form-control"
+                  placeholder="ex: Dupont"
+                  value="Dupont"
+                />
+                <p>
+                  <small>
+                    C'est ton nom<br />
+                    Très utile pour la livraison
+                  </small>
+                </p>
+              </div>
+            </div>
+            <div class="form-group">
+              <label for="userEmail" class="required">
+                <i class="fa-solid fa-envelope"></i>
+              </label>
+              <input
+                type="email"
+                id="userEmail"
+                class="form-control"
+                required
+                aria-required="true"
+                placeholder="ex: sophie@dupont.com"
+                value="sophie@dupont.com"
+              />
+              <p>
+                <small>
+                  C'est ton adresse e-mail<br />
+                  C'est avec ça que tu te connectes
+                </small>
+              </p>
+            </div>
+            <div class="grid">
+              <div class="form-group">
+                <label for="userPassword">
+                  <i class="fa-solid fa-key"></i>
+                </label>
+                <input type="password" id="userPassword" class="form-control" />
+                <p>
+                  <small>
+                    Modifie ton mot de passe<br />
+                    Il doit contenir au moins 8 caractères<br />
+                    Il faut aussi des chiffres et des majuscules
+                  </small>
+                </p>
+              </div>
+              <div class="form-group">
+                <label for="userPasswordConfirm">
+                  <i class="fa-solid fa-key"></i>
+                </label>
+                <input
+                  type="password"
+                  id="userPasswordConfirm"
+                  class="form-control"
+                />
+                <p>
+                  <small>
+                    Confirme ton mot de passe<br />
+                    il doit être identique au premier<br />
+                    avec des machins comme *, +, /, $, etc…
+                  </small>
+                </p>
+              </div>
+            </div>
+            <button type="submit" class="app-btn cta">
+              Enregistrer
+              <i class="fa-solid fa-play"></i>
+            </button>
+          </form>
+        </section>
+      </div>
     </main>
 
     <!-- Application Footer -->

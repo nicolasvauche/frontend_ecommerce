@@ -5,7 +5,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-    <title>Tes adresses - Ton compte SHOE</title>
+    <title>Tes précommandes - Ton compte SHOE</title>
 
     <!-- Favicons -->
     <link rel="apple-touch-icon" sizes="152x152" href="apple-touch-icon.png" />
@@ -46,7 +46,7 @@
           <i class="fa-solid fa-house"></i>
           <span>Accueil</span>
         </a>
-        <a href="compte.html" class="active">
+        <a href="mon-compte.html" class="active">
           <i class="fa-solid fa-user"></i>
           <span>Compte</span>
         </a>
@@ -64,8 +64,8 @@
     <!-- Application Alert -->
     <div class="app-alert info">
       <strong>Le savais-tu ? </strong>
-      Tu peux gérer plusieurs adresses de livraison, c'est pratique si tu veux
-      envoyer un cadeau à un ami !
+      On fabrique environ 300 paires de chaussures en une semaine, tout à la
+      main évidemment
       <i class="fa-solid fa-face-smile-wink fa-lg"></i>
     </div>
 
@@ -74,24 +74,24 @@
       <div class="grid">
         <!-- Sub Menu Espace client -->
         <div class="app-subnavigation" role="navigation">
-          <a href="compte.html">
+          <a href="mon-compte.html">
             <i class="fa-solid fa-user"></i>
             <span>Mon compte</span>
           </a>
-          <a href="adresses.html" class="active">
+          <a href="mes-adresses.html">
             <i class="fa-solid fa-address-book"></i>
             <span>Mes adresses</span>
           </a>
-          <a href="precommandes.html">
+          <a href="mes-precommandes.html" class="active">
             <i class="fa-solid fa-person-praying"></i>
             <span>Mes précommandes</span>
           </a>
-          <a href="commandes.html">
+          <a href="mes-commandes.html">
             <i class="fa-solid fa-chalkboard-user"></i>
             <span>Mes commandes</span>
           </a>
           <hr />
-          <a href="./">
+          <a href="./" onclick="return window.confirm('Tu veux partir ?');">
             <i class="fa-solid fa-user-slash text-danger"></i>
             <span>Déconnexion</span>
           </a>
@@ -99,74 +99,15 @@
 
         <!-- Page Card -->
         <section class="card">
-          <h2>Gère tes adresses ici</h2>
+          <h2>Tes précommandes</h2>
           <p class="text-justify">
-            Ici, tu enregistres tes adresses de livraison et de facturation.<br />
-            C'est pratique car comme ça, tu pourras choisir facilement et vite
-            fait celles qui te conviennent au moment de commander tes chaussures
-            SHOE.
+            On fabrique toutes nos chaussures à la main. Des fois, ben y'en a
+            plus. Mais si y'en a plus, tu peux quand même commander tes SHOE !
+            Et tu les auras dans une semaine
+            <small>(à peu près, c'est pas une science exacte)</small>
           </p>
 
-          <div class="grid">
-            <div class="addresses">
-              <h3>Livraison</h3>
-              <div class="grid">
-                <div class="grid-item">
-                  <i class="fa-solid fa-truck-fast"></i>
-                  <h4 class="item-title">Maison</h4>
-                  <address class="item-body">
-                    17 rue Jules Jacob<br />
-                    23002 MAVILLE
-                  </address>
-                  <div class="item-actions">
-                    <a href="#" class="text-danger">
-                      <i class="fa-solid fa-trash-can"></i>
-                    </a>
-                    <a href="#">
-                      <i class="fa-solid fa-pen-to-square"></i>
-                    </a>
-                  </div>
-                </div>
-                <div class="grid-item">
-                  <i class="fa-solid fa-truck-fast"></i>
-                  <h4 class="item-title">Maman</h4>
-                  <address class="item-body">
-                    18 rue Jules Jacob<br />
-                    23002 NOTREVILLE
-                  </address>
-                  <div class="item-actions">
-                    <a href="#" class="text-danger">
-                      <i class="fa-solid fa-trash-can"></i>
-                    </a>
-                    <a href="#">
-                      <i class="fa-solid fa-pen-to-square"></i>
-                    </a>
-                  </div>
-                </div>
-              </div>
-            </div>
-            <div class="addresses">
-              <h3>Facturation</h3>
-              <div class="grid">
-                <div class="grid-item">
-                  <i class="fa-solid fa-money-bill-wave"></i>
-                  <h4 class="item-title">Moi</h4>
-                  <address class="item-body">
-                    17 rue Jules Jacob<br />
-                    23002 MAVILLE
-                  </address>
-                  <div class="item-actions">
-                    <a href="#" class="text-danger">
-                      <i class="fa-solid fa-trash-can"></i>
-                    </a>
-                    <a href="#">
-                      <i class="fa-solid fa-pen-to-square"></i>
-                    </a>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
+          <p class="text-success">Aucune précommande en cours…</p>
         </section>
       </div>
     </main>
