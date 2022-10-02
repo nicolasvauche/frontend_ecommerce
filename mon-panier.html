@@ -5,7 +5,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-    <title>Crée ton compte SHOE</title>
+    <title>Ton panier - Ton compte SHOE</title>
 
     <!-- Favicons -->
     <link rel="apple-touch-icon" sizes="152x152" href="apple-touch-icon.png" />
@@ -32,7 +32,7 @@
 
     <link rel="stylesheet" href="assets/css/styles.min.css" />
   </head>
-  <body>
+  <body class="panier">
     <!-- Application Header -->
     <header class="app-header">
       <a href="./" class="app-brandname">
@@ -54,11 +54,11 @@
           <i class="fa-solid fa-user-lock"></i>
           <span>Connexion</span>
         </a>
-        <a href="inscription.html" class="active">
+        <a href="inscription.html">
           <i class="fa-solid fa-user-plus"></i>
           <span>Inscription</span>
         </a>
-        <a href="mon-panier.html">
+        <a href="mon-panier.html" class="active">
           <i class="fa-solid fa-cart-shopping"></i>
           <span>Panier</span>
         </a>
@@ -68,156 +68,36 @@
     <!-- Application Alert -->
     <div class="app-alert info">
       <strong>Le savais-tu ? </strong>
-      Si tu crées ton compte, à chaque fois que tu te connecteras
-      <small>(si tu te souviens de ton mot de passe)</small>, tu retrouveras
-      tout comme avant
+      Si tu laisses des SHOE trop longtemps dans ton panier, au bout d'un moment
+      elles vont s'en aller
       <i class="fa-solid fa-face-smile-wink fa-lg"></i>
     </div>
 
     <!-- Application Main -->
     <main class="app-main">
-      <!-- Page Card -->
-      <section class="card">
-        <h2>Crée ton compte SHOE</h2>
-        <p class="text-justify">
-          Avec ton compte SHOE, tu pourras te connecter
-          <small>(déjà c'est cool)</small>, et retrouver tes anciennes
-          commandes, ton panier, tes adresses et plein d'autres choses bien
-          douillettes. On te choye chez SHOE !
-        </p>
+      <div class="grid">
+        <!-- Page Card -->
+        <section class="card">
+          <h2>Ton panier</h2>
+          <p class="text-justify">
+            C'est tes courses
+            <i class="fa-regular fa-face-smile-beam"></i> Sur cette page,
+            retrouve tout ce que tu as sélectionné chez SHOE
+          </p>
 
-        <p>
-          <small>
-            Ça <span class="required">*</span>, ça veut dire obligatoire !
-          </small>
-        </p>
+          <p>
+            <small>Il reste 99€ pour avoir la livraison gratuite</small>
+          </p>
 
-        <form class="app-form">
-          <div class="grid">
-            <div class="form-group">
-              <label for="userFirstname" title="Ton prénom">
-                <i class="fa-solid fa-user"></i>
-              </label>
-              <input
-                type="text"
-                id="userFirstname"
-                class="form-control"
-                placeholder="ex: Sophie"
-                aria-labelledby="firstnameHelp"
-              />
-              <p id="firstnameHelp">
-                <small>
-                  Entre ton prénom<br />
-                  On s'en souviendra
-                </small>
-              </p>
-            </div>
-            <div class="form-group">
-              <label for="userLastname" title="Ton nom">
-                <i class="fa-solid fa-user"></i>
-              </label>
-              <input
-                type="text"
-                id="userLastname"
-                class="form-control"
-                placeholder="ex: Dupont"
-                aria-labelledby="lastnameHelp"
-              />
-              <p id="lastnameHelp">
-                <small>
-                  Entre ton nom<br />
-                  C'est utile pour la livraison
-                </small>
-              </p>
-            </div>
-          </div>
-          <div class="form-group">
-            <label for="userEmail" class="required" title="Ton adresse e-mail">
-              <i class="fa-solid fa-envelope"></i>
-            </label>
-            <input
-              type="email"
-              id="userEmail"
-              class="form-control"
-              placeholder="ex: sophie@dupont.com"
-              required
-              aria-required="true"
-              aria-labelledby="emailHelp"
-            />
-            <p id="emailHelp">
-              <small>
-                Entre ton adresse e-mail<br />
-                Et rappelle-t-en s'il te plaît
-              </small>
-            </p>
-          </div>
-          <div class="grid">
-            <div class="form-group">
-              <label
-                for="userPassword"
-                class="required"
-                title="Ton mot de passe"
-              >
-                <i class="fa-solid fa-key"></i>
-              </label>
-              <input
-                type="password"
-                id="userPassword"
-                class="form-control"
-                required
-                aria-required="true"
-                aria-labelledby="passwordHelp"
-              />
-              <p id="passwordHelp">
-                <small>
-                  Entre ton mot de passe<br />
-                  Il doit contenir au moins 8 caractères<br />
-                  Il faut aussi des chiffres et des majuscules
-                </small>
-              </p>
-            </div>
-            <div class="form-group">
-              <label
-                for="userPasswordConfirm"
-                class="required"
-                title="Confirme ton mot de passe"
-              >
-                <i class="fa-solid fa-key"></i>
-              </label>
-              <input
-                type="password"
-                id="userPasswordConfirm"
-                class="form-control"
-                required
-                aria-required="true"
-                aria-labelledby="passwordConfirmHelp"
-              />
-              <p id="passwordConfirmHelp">
-                <small>
-                  Confirme ton mot de passe<br />
-                  il doit être identique au premier<br />
-                  avec des machins comme *, +, /, $, etc…
-                </small>
-              </p>
-            </div>
-          </div>
-          <button type="submit" class="app-btn cta">
-            Inscription
-            <i class="fa-solid fa-play"></i>
-          </button>
-        </form>
+          <p class="text-success">Ton panier est désespérément vide…</p>
+        </section>
 
-        <hr />
-
-        <p>
-          <small>
-            <a href="connexion.html">
-              Ah mince <i class="fa-regular fa-face-rolling-eyes"></i> J'ai déjà
-              un compte SHOE, je veux me connecter plutôt
-            </a>
-          </small>
-        </p>
-      </section>
+        <!-- Sub Menu Panier -->
+        <aside class="summary">
+          <h3>Résumé</h3>
+          <p>Aucun article</p>
+        </aside>
+      </div>
     </main>
 
     <!-- Application Footer -->

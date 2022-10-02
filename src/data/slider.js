@@ -7,7 +7,7 @@ export const slides = [
     description:
       'Lorem ipsum dolor sit amet consectetur adipisicing elit. Dignissimos officiis error repellendus nobis, esse cupiditate voluptates officia inventore.',
     img: 'shoes01_r.png',
-    alt: 'Tranquille en ville'
+    alt: 'Passe partout'
   },
   {
     title: {
@@ -22,12 +22,12 @@ export const slides = [
   {
     title: {
       tag: 'h2',
-      content: 'Tu vas passer partout'
+      content: 'Tranquille en ville'
     },
     description:
       'Lorem ipsum dolor sit amet consectetur adipisicing elit. Dignissimos officiis error repellendus nobis, esse cupiditate voluptates officia inventore.',
     img: 'shoes03_r.png',
-    alt: 'Pour les baroudeurs'
+    alt: 'Pour aller en ville'
   },
   {
     title: {

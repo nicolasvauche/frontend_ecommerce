@@ -17,7 +17,7 @@
     a {
         @include displayFlex(flex-end, center, column);
         flex: 1;
-        padding: 0.75rem;
+        padding: 0.75rem 0.25rem;
         text-decoration: none;
 
         @include respondTo(sm) {

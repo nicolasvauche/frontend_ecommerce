@@ -1,0 +1,50 @@
+html {
+    body {
+        &.panier {
+            .app-main {
+                & > .grid {
+                    grid-template-columns: 1fr;
+                    grid-gap: 0;
+
+                    @include respondTo(sm) {
+                        grid-template-columns: 1fr 2fr;
+                    }
+
+                    @include respondTo(md) {
+                        grid-gap: 1rem;
+                    }
+
+                    section {
+                        &.card {
+                            margin-left: 1rem;
+                            margin-right: 1rem;
+
+                            @include respondTo(sm) {
+                                width: 60vw;
+                            }
+
+                            @include respondTo(md) {
+                                margin-right: 0;
+                                width: 70vw;
+                            }
+
+                            & > .grid {
+                                width: 100%;
+                            }
+                        }
+                    }
+
+                    aside {
+                        padding: 2rem 1rem;
+                        color: $color-white;
+                        background: url("../img/bg_cover.png") no-repeat;
+
+                        @include respondTo(sm) {
+                            background-size: cover;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
