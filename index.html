@@ -31,6 +31,8 @@
     ></script>
 
     <link rel="stylesheet" href="assets/css/styles.min.css" />
+
+    <script src="assets/js/index.js" type="module" defer></script>
   </head>
   <body>
     <!-- Application Header -->
@@ -65,40 +67,11 @@
     <main class="app-main">
       <!-- Page Cover -->
       <section class="cover">
-        <div class="app-slider">
-          <div class="controls">
-            <a href="#">
-              <i class="fa-solid fa-circle"></i>
-            </a>
-            <a href="#">
-              <i class="fa-regular fa-circle"></i>
-            </a>
-            <a href="#">
-              <i class="fa-regular fa-circle"></i>
-            </a>
-            <a href="#">
-              <i class="fa-regular fa-circle"></i>
-            </a>
-          </div>
-          <div class="slide">
-            <div class="slide-body">
-              <h1 class="slide-title">Tu vas pas y aller pieds nus</h1>
-              <p class="slide-text text-justify">
-                Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                Dignissimos officiis error repellendus nobis, esse cupiditate
-                voluptates officia inventore.
-              </p>
-              <div class="slide-footer">
-                <a href="#" class="app-btn"> Plus de détails </a>
-                <a href="#" class="app-btn cta"> Je commande </a>
-              </div>
-            </div>
-            <img
-              src="assets/img/catalog/shoes/shoes01_r.png"
-              class="slide-img-top"
-              alt="Fabriqué en France"
-            />
-          </div>
+        <div class="app-slider" id="slider">
+          <!-- Slider Controls -->
+          <div class="controls"></div>
+
+          <!-- Slider Slides -->
         </div>
       </section>
 

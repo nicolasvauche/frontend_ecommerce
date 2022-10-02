@@ -23,23 +23,55 @@
 
             i {
                 font-size: 1.25rem;
+                transition: all 0.5s;
 
                 &.fa-solid {
+                    display: none;
                     color: $color-secondary;
+                }
+            }
+
+            &:hover {
+                i {
+                    &.fa-regular {
+                        display: none;
+                    }
+
+                    &.fa-solid {
+                        display: inline;
+                        color: rgba($color-secondary, 0.5);
+                    }
+                }
+            }
+
+            &.active {
+                i {
+                    &.fa-regular {
+                        display: none;
+                    }
+
+                    &.fa-solid {
+                        display: inline;
+                        color: $color-secondary;
+                    }
                 }
             }
         }
     }
 
     .slide {
-        @include displayFlex(space-between, center, column-reverse);
+        display: none;
 
-        @include respondTo(sm) {
-            @include displayFlex(space-between, center, row);
-        }
+        &.active {
+            @include displayFlex(space-between, center, column-reverse);
 
-        @include respondTo(md) {
-            @include displayFlex(space-around, center, row);
+            @include respondTo(sm) {
+                @include displayFlex(space-between, center, row);
+            }
+
+            @include respondTo(md) {
+                @include displayFlex(space-around, center, row);
+            }
         }
 
         .slide-body {
@@ -70,7 +102,7 @@
                 width: 60vh;
                 height: 60vh;
 
-                &:hover{
+                &:hover {
                     transform: translateX(-10%) rotate(0deg);
                 }
             }
