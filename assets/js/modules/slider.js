@@ -1,8 +1,8 @@
 /**
  * Change active slide
- * 
- * @param {node} controlElt 
- * @param {node} slideElt 
+ *
+ * @param {node} controlElt
+ * @param {node} slideElt
  */
 const changeSlide = (controlElt, slideElt) => {
   const slideElts = document.querySelectorAll('#slider .slide')
@@ -20,10 +20,10 @@ const changeSlide = (controlElt, slideElt) => {
 
 /**
  * Build slides DOM elements
- * 
- * @param {json} slide 
- * @param {int} index 
- * @param {node} container 
+ *
+ * @param {json} slide
+ * @param {int} index
+ * @param {node} container
  * @returns node
  */
 const buildSlide = (slide, index, container) => {
@@ -52,6 +52,12 @@ const buildSlide = (slide, index, container) => {
   slideTextElt.innerHTML = slide.description
   slideBodyElt.appendChild(slideTextElt)
 
+  // Build Slide price
+  const slicePriceElt = document.createElement('p')
+  slicePriceElt.classList.add('slide-price')
+  slicePriceElt.innerHTML = slide.price + '<sup>&euro;</sup>'
+  slideBodyElt.appendChild(slicePriceElt)
+
   // Build Slide footer
   const slideFooterElt = document.createElement('div')
   slideFooterElt.classList.add('slide-footer')
@@ -68,7 +74,12 @@ const buildSlide = (slide, index, container) => {
   slideOrderBtn.href = '#'
   slideOrderBtn.classList.add('app-btn')
   slideOrderBtn.classList.add('cta')
-  slideOrderBtn.innerText = 'Je commande'
+  if (slide.stock > 0) {
+    slideOrderBtn.classList.add('bg-success')
+    slideOrderBtn.innerText = 'Je les achète'
+  } else {
+    slideOrderBtn.innerText = 'Je commande'
+  }
   slideFooterElt.appendChild(slideOrderBtn)
 
   // Append Slide footer to Slide body
@@ -78,13 +89,27 @@ const buildSlide = (slide, index, container) => {
   slideElt.appendChild(slideBodyElt)
 
   // Build Slide image
+  const slideFigureElt = document.createElement('figure')
+  slideFigureElt.classList.add('slide-img')
   const slideImgElt = document.createElement('img')
   slideImgElt.classList.add('slide-img-top')
   slideImgElt.src = 'assets/img/catalog/shoes/' + slide.img
   slideImgElt.alt = slide.alt
+  slideFigureElt.appendChild(slideImgElt)
+  // Build slide flag
+  const slideFlagElt = document.createElement('figcaption')
+  slideFlagElt.classList.add('flag')
+  if (slide.stock === 0) {
+    slideFlagElt.classList.add('bg-secondary')
+    slideFlagElt.innerText = 'En précommande'
+  } else {
+    slideFlagElt.classList.add('bg-success')
+    slideFlagElt.innerText = slide.stock + ' en stock'
+  }
+  slideFigureElt.appendChild(slideFlagElt)
 
   // Append Slide image to Slide
-  slideElt.appendChild(slideImgElt)
+  slideElt.appendChild(slideFigureElt)
 
   // Append Slide to Slider container
   container.appendChild(slideElt)
@@ -94,10 +119,10 @@ const buildSlide = (slide, index, container) => {
 
 /**
  * Build slider controls DOM elements
- * 
- * @param {node} controls 
- * @param {node} slideElt 
- * @param {int} index 
+ *
+ * @param {node} controls
+ * @param {node} slideElt
+ * @param {int} index
  */
 const buildControls = (controls, slideElt, index) => {
   // Build Slide Controls container
@@ -130,10 +155,10 @@ const buildControls = (controls, slideElt, index) => {
 
 /**
  * Build slider slides and controls
- * 
- * @param {array} slides 
- * @param {node} container 
- * @param {node} controls 
+ *
+ * @param {array} slides
+ * @param {node} container
+ * @param {node} controls
  */
 export const buildSlides = (slides, container, controls) => {
   slides.forEach((slide, index) => {
