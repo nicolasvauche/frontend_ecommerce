@@ -71,6 +71,33 @@ html {
                                     }
                                 }
                             }
+
+                            .app-form {
+                                .form-group {
+                                    &.flex {
+                                        flex-wrap: initial;
+                                        flex-direction: row;
+                                    }
+
+                                    .form-control {
+                                        padding-left: 3rem;
+
+                                        @include respondTo(sm) {
+                                            padding: 0.63rem 1rem 0.62rem 3rem;
+                                        }
+                                    }
+
+                                    .app-btn {
+                                        padding: 0.15rem 0.5rem;
+                                        border: 1px solid $color-secondary;
+                                        border-left: none;
+
+                                        @include respondTo(sm) {
+                                            padding: 0.25rem 0.5rem;
+                                        }
+                                    }
+                                }
+                            }
                         }
                     }
                 }

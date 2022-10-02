@@ -5,7 +5,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-    <title>Tes commandes - Ton compte SHOE</title>
+    <title>Ta Newsletter - Ton compte SHOE</title>
 
     <!-- Favicons -->
     <link rel="apple-touch-icon" sizes="152x152" href="apple-touch-icon.png" />
@@ -64,7 +64,8 @@
     <!-- Application Alert -->
     <div class="app-alert info">
       <strong>Le savais-tu ? </strong>
-      Tu peux re-commander des chaussures si tu en veux une autre paire
+      Si tu t'abonnes à notre newsletter, tu recevras du courrier intéressant
+      <small>(pour une fois)</small>
       <i class="fa-solid fa-face-smile-wink fa-lg"></i>
     </div>
 
@@ -81,7 +82,7 @@
             <i class="fa-solid fa-address-book"></i>
             <span>Mes adresses</span>
           </a>
-          <a href="mon-courrier.html">
+          <a href="mon-courrier.html" class="active">
             <i class="fa-regular fa-envelope"></i>
             <span>Mon courrier</span>
           </a>
@@ -89,7 +90,7 @@
             <i class="fa-solid fa-person-praying"></i>
             <span>Mes précommandes</span>
           </a>
-          <a href="mes-commandes.html" class="active">
+          <a href="mes-commandes.html">
             <i class="fa-solid fa-chalkboard-user"></i>
             <span>Mes commandes</span>
           </a>
@@ -102,16 +103,51 @@
 
         <!-- Page Card -->
         <section class="card">
-          <h2>Tes commandes</h2>
+          <h2>Ta Newsletter</h2>
           <p class="text-justify">
-            Waou, t'en as des belles chaussures
-            <i class="fa-regular fa-face-grin-hearts"></i><br />
-            Sur cette page, retrouve tout ce que tu as acheté chez SHOE,
-            recommande nos produits, re-commande nos produits, enfin fais ce que
-            tu veux…
+            Mais enfin ? Tu n'es pas encore abonné à la Newsletter SHOE
+            <i class="fa-regular fa-face-surprise"></i> Fais-le vite ! Et va
+            checker tes mails, parce qu'il faudra que tu confirmes ton
+            abonnement
+            <small>(hé oui, c'est sécurisé ça aussi)</small>
           </p>
 
-          <p class="text-success">Aucune commande pour l'instant…</p>
+          <p>
+            <small>
+              Ça <span class="required">*</span>, ça veut dire obligatoire !
+            </small>
+          </p>
+
+          <form class="app-form">
+            <div class="form-group flex">
+              <label
+                for="newsletterEmail"
+                class="required"
+                title="Ton adresse e-mail"
+              >
+                <i class="fa-solid fa-envelope"></i>
+              </label>
+              <input
+                type="email"
+                name="email"
+                id="newsletterEmail"
+                class="form-control"
+                placeholder="ex: sophie@dupont.com"
+                required
+                aria-required="true"
+                aria-labelledby="emailHelp"
+              />
+              <button type="submit" class="app-btn" title="Abonne-toi">
+                <i class="fa-solid fa-play"></i>
+              </button>
+            </div>
+            <p id="emailHelp">
+              <small>
+                Nous n'utilisons tes données que pour te servir au mieux.<br />
+                On ne les revend pas, on ne les donne à personne. Promis !
+              </small>
+            </p>
+          </form>
         </section>
       </div>
     </main>
@@ -188,6 +224,7 @@
             </button>
           </div>
         </form>
+      </div>
 
       <!-- Footer Legals -->
       <div class="legals">
