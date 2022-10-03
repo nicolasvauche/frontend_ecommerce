@@ -139,6 +139,14 @@
         .slide-footer {
             @include displayFlex(space-around, center, row, 1rem);
             margin: 1.5rem 0 0;
+
+            a {
+                &:hover {
+                    color: $color-primary !important;
+                    background-color: $color-white !important;
+                    border-color: $color-white !important;
+                }
+            }
         }
 
         .slide-price {

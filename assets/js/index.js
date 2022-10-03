@@ -1,11 +1,11 @@
-import { slides } from '../../src/data/slider.js'
-import { buildSlides } from './modules/slider.js'
+import { sliderFactory } from './factory/slider.js'
 
 window.addEventListener('DOMContentLoaded', () => {
   // Get Slider container
-  const sliderElt = document.getElementById('slider')
+  const sliderContainer = document.getElementById('slider')
   // Get Slider Controls container
-  const sliderControlsElt = sliderElt.querySelector('.controls')
+  const sliderControls = sliderContainer.querySelector('.controls')
   // Build Slides and controls
-  buildSlides(slides, sliderElt, sliderControlsElt)
+  const slider = sliderFactory(sliderContainer, sliderControls)
+  slider.build()
 })

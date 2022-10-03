@@ -1,4 +1,4 @@
-export const slides = [
+export const slidesData = [
   {
     title: {
       tag: 'h1',
@@ -6,8 +6,10 @@ export const slides = [
     },
     description:
       'Lorem ipsum dolor sit amet consectetur adipisicing elit. Dignissimos officiis error repellendus nobis, esse cupiditate voluptates officia inventore.',
-    img: 'shoes01_r.png',
-    alt: 'Passe partout',
+    img: {
+      src: 'shoes01_r.png',
+      alt: 'Passe partout'
+    },
     price: 99,
     stock: 6
   },
@@ -18,8 +20,10 @@ export const slides = [
     },
     description:
       'Lorem ipsum dolor sit amet consectetur adipisicing elit. Dignissimos officiis error repellendus nobis, esse cupiditate voluptates officia inventore.',
-    img: 'shoes02_r.png',
-    alt: 'Pour les sportifs',
+    img: {
+      src: 'shoes02_r.png',
+      alt: 'Pour les sportifs'
+    },
     price: 69,
     stock: 0
   },
@@ -30,8 +34,10 @@ export const slides = [
     },
     description:
       'Lorem ipsum dolor sit amet consectetur adipisicing elit. Dignissimos officiis error repellendus nobis, esse cupiditate voluptates officia inventore.',
-    img: 'shoes03_r.png',
-    alt: 'Pour aller en ville',
+    img: {
+      src: 'shoes03_r.png',
+      alt: 'Pour aller en ville'
+    },
     price: 199,
     stock: 2
   },
@@ -42,8 +48,10 @@ export const slides = [
     },
     description:
       'Lorem ipsum dolor sit amet consectetur adipisicing elit. Dignissimos officiis error repellendus nobis, esse cupiditate voluptates officia inventore.',
-    img: 'shoes04_r.png',
-    alt: 'Streetfoot style',
+    img: {
+      src: 'shoes04_r.png',
+      alt: 'Streetfoot style'
+    },
     price: 49,
     stock: 0
   }

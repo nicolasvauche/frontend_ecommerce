@@ -31,6 +31,8 @@
     ></script>
 
     <link rel="stylesheet" href="assets/css/styles.min.css" />
+
+    <script src="assets/js/cart.js" type="module" defer></script>
   </head>
   <body class="panier">
     <!-- Application Header -->
@@ -85,11 +87,15 @@
             retrouve tout ce que tu as sélectionné chez SHOE
           </p>
 
-          <p>
+          <!-- Panier freeshipping -->
+          <p id="cartFreeshipping">
             <small>Il reste 99€ pour avoir la livraison gratuite</small>
           </p>
 
-          <p class="text-success">Ton panier est désespérément vide…</p>
+          <!-- Panier items -->
+          <div id="cart" class="app-cart">
+            <div class="cart-items"></div>
+          </div>
         </section>
 
         <!-- Sub Menu Panier -->
