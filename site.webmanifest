@@ -2,9 +2,9 @@
   "name": "Habille tes pieds avec SHOE",
   "short_name": "SHOE",
   "start_url": "/",
+  "display": "standalone",
   "theme_color": "#ffffff",
   "background_color": "#ffffff",
-  "display": "standalone",
   "icons": [
     {
       "src": "android-chrome-192x192.png",
