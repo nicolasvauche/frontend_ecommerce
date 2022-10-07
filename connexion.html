@@ -58,6 +58,10 @@
           <i class="fa-solid fa-user-plus"></i>
           <span>Inscription</span>
         </a>
+        <a href="mon-panier.html" class="hide">
+          <i class="fa-solid fa-cart-shopping"></i>
+          <span>Panier</span>
+        </a>
       </nav>
     </header>
 
@@ -76,8 +80,8 @@
         <h2>Connecte-toi à ton compte SHOE</h2>
         <p class="text-justify">
           Si tu as déjà créé ton compte SHOE, et si tu te souviens de ton mot de
-          passe <small>(bravo)</small>, alors connecte-toi, et retrouve tout comme tu l'avais
-          laissé en partant la dernière fois. Pas mal, non ?
+          passe <small>(bravo)</small>, alors connecte-toi, et retrouve tout
+          comme tu l'avais laissé en partant la dernière fois. Pas mal, non ?
         </p>
 
         <p>
@@ -94,6 +98,7 @@
             <input
               type="email"
               id="userEmail"
+              name="email"
               class="form-control"
               placeholder="ex: sophie@dupont.com"
               required
@@ -111,6 +116,7 @@
             <input
               type="password"
               id="userPassword"
+              name="password"
               class="form-control"
               required
               aria-required="true"
@@ -221,6 +227,7 @@
             </button>
           </div>
         </form>
+      </div>
 
       <!-- Footer Legals -->
       <div class="legals">

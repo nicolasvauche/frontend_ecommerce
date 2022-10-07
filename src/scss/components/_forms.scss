@@ -1,4 +1,6 @@
 .app-form {
+    width: 100%;
+
     .form-group {
         position: relative;
         @include displayFlex(center);

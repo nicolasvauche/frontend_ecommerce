@@ -5,7 +5,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-    <title>Tes précommandes - Ton compte SHOE</title>
+    <title>Ton panier - Ton compte SHOE</title>
 
     <!-- Favicons -->
     <link rel="apple-touch-icon" sizes="152x152" href="apple-touch-icon.png" />
@@ -31,8 +31,10 @@
     ></script>
 
     <link rel="stylesheet" href="assets/css/styles.min.css" />
+
+    <script src="assets/js/cart.js" type="module" defer></script>
   </head>
-  <body class="compte">
+  <body class="panier">
     <!-- Application Header -->
     <header class="app-header">
       <a href="./" class="app-brandname">
@@ -46,7 +48,7 @@
           <i class="fa-solid fa-house"></i>
           <span>Accueil</span>
         </a>
-        <a href="mon-compte.html" class="active">
+        <a href="mon-compte.html">
           <i class="fa-solid fa-user"></i>
           <span>Compte</span>
         </a>
@@ -58,7 +60,7 @@
           <i class="fa-solid fa-user-plus"></i>
           <span>Inscription</span>
         </a>
-        <a href="mon-panier.html" class="hide">
+        <a href="mon-panier.html" class="active">
           <i class="fa-solid fa-cart-shopping"></i>
           <span>Panier</span>
         </a>
@@ -68,59 +70,39 @@
     <!-- Application Alert -->
     <div class="app-alert info">
       <strong>Le savais-tu ? </strong>
-      On fabrique environ 300 paires de chaussures en une semaine, tout à la
-      main évidemment
+      Si tu laisses des SHOE trop longtemps dans ton panier, au bout d'un moment
+      elles vont s'en aller
       <i class="fa-solid fa-face-smile-wink fa-lg"></i>
     </div>
 
     <!-- Application Main -->
     <main class="app-main">
       <div class="grid">
-        <!-- Sub Menu Espace client -->
-        <div class="app-subnavigation" role="navigation">
-          <a href="mon-compte.html">
-            <i class="fa-solid fa-user"></i>
-            <span>Mon compte</span>
-          </a>
-          <a href="mes-adresses.html">
-            <i class="fa-solid fa-address-book"></i>
-            <span>Mes adresses</span>
-          </a>
-          <a href="mon-courrier.html">
-            <i class="fa-regular fa-envelope"></i>
-            <span>Mon courrier</span>
-          </a>
-          <a href="mon-panier.html" class="hide">
-            <i class="fa-solid fa-cart-shopping"></i>
-            <span>Mon panier</span>
-          </a>
-          <a href="mes-precommandes.html" class="active">
-            <i class="fa-solid fa-person-praying"></i>
-            <span>Mes précommandes</span>
-          </a>
-          <a href="mes-commandes.html">
-            <i class="fa-solid fa-chalkboard-user"></i>
-            <span>Mes commandes</span>
-          </a>
-          <hr />
-          <a href="./" onclick="return window.confirm('Tu veux partir ?');">
-            <i class="fa-solid fa-user-slash text-danger"></i>
-            <span>Déconnexion</span>
-          </a>
-        </div>
-
         <!-- Page Card -->
         <section class="card">
-          <h2>Tes précommandes</h2>
+          <h2>Ton panier</h2>
           <p class="text-justify">
-            On fabrique toutes nos chaussures à la main. Des fois, ben y'en a
-            plus. Mais si y'en a plus, tu peux quand même commander tes SHOE !
-            Et tu les auras dans une semaine
-            <small>(à peu près, c'est pas une science exacte)</small>
+            C'est tes courses
+            <i class="fa-regular fa-face-smile-beam"></i> Sur cette page,
+            retrouve tout ce que tu as sélectionné chez SHOE
           </p>
 
-          <p class="text-success">Aucune précommande en cours…</p>
+          <!-- Panier freeshipping -->
+          <p id="cartFreeshipping">
+            <small>Il reste 99€ pour avoir la livraison gratuite</small>
+          </p>
+
+          <!-- Panier items -->
+          <div id="cart" class="app-cart">
+            <div class="cart-items"></div>
+          </div>
         </section>
+
+        <!-- Sub Menu Panier -->
+        <aside class="summary">
+          <h3>Résumé</h3>
+          <p>Aucun article</p>
+        </aside>
       </div>
     </main>
 

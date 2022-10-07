@@ -23,23 +23,55 @@
 
             i {
                 font-size: 1.25rem;
+                transition: all 0.5s;
 
                 &.fa-solid {
+                    display: none;
                     color: $color-secondary;
+                }
+            }
+
+            &:hover {
+                i {
+                    &.fa-regular {
+                        display: none;
+                    }
+
+                    &.fa-solid {
+                        display: inline;
+                        color: rgba($color-secondary, 0.5);
+                    }
+                }
+            }
+
+            &.active {
+                i {
+                    &.fa-regular {
+                        display: none;
+                    }
+
+                    &.fa-solid {
+                        display: inline;
+                        color: $color-secondary;
+                    }
                 }
             }
         }
     }
 
     .slide {
-        @include displayFlex(space-between, center, column-reverse);
+        display: none;
 
-        @include respondTo(sm) {
-            @include displayFlex(space-between, center, row);
-        }
+        &.active {
+            @include displayFlex(space-between, center, column-reverse);
 
-        @include respondTo(md) {
-            @include displayFlex(space-around, center, row);
+            @include respondTo(sm) {
+                @include displayFlex(space-between, center, row);
+            }
+
+            @include respondTo(md) {
+                @include displayFlex(space-around, center, row);
+            }
         }
 
         .slide-body {
@@ -54,10 +86,29 @@
             }
         }
 
+        .slide-img {
+            position: relative;
+            transform: translateX(-10%);
+
+            .flag {
+                position: absolute;
+                bottom: 0;
+                left: 50%;
+                padding: 0.75rem 0;
+                width: 80%;
+                font-size: 0.85rem;
+                font-weight: bold;
+                color: $color-primary;
+                background-color: $color-white;
+                transform: translateX(-50%);
+            }
+        }
+
         .slide-img-top {
             width: 33vh;
             height: 33vh;
             object-fit: cover;
+            border-radius: 50%;
             transform: rotate(15deg);
             transition: all 0.5s;
 
@@ -66,12 +117,12 @@
             }
 
             @include respondTo(md) {
-                transform: translateX(-10%) rotate(15deg);
+                transform: rotate(15deg);
                 width: 60vh;
                 height: 60vh;
 
-                &:hover{
-                    transform: translateX(-10%) rotate(0deg);
+                &:hover {
+                    transform: rotate(0deg);
                 }
             }
         }
@@ -88,6 +139,26 @@
         .slide-footer {
             @include displayFlex(space-around, center, row, 1rem);
             margin: 1.5rem 0 0;
+
+            a {
+                &:hover {
+                    color: $color-primary !important;
+                    background-color: $color-white !important;
+                    border-color: $color-white !important;
+                }
+            }
+        }
+
+        .slide-price {
+            margin: 1rem 0 0;
+            font-family: $font-secondary;
+            font-size: 2rem;
+            letter-spacing: 1px;
+            color: $color-secondary;
+
+            sup {
+                font-size: 1.5rem;
+            }
         }
     }
 }

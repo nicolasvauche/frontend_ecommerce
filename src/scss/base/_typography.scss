@@ -100,6 +100,10 @@ a {
     font-weight: bold;
 }
 
+.text-secondary {
+    color: $color-secondary !important;
+}
+
 .text-danger {
     color: $color-danger !important;
 }
@@ -110,4 +114,32 @@ a {
 
 .text-success {
     color: $color-success !important;
+}
+
+.bg-secondary {
+    color: $color-white !important;
+    background-color: $color-secondary !important;
+    border-color: $color-secondary !important;
+}
+
+.bg-danger {
+    color: $color-white !important;
+    background-color: $color-danger !important;
+    border-color: $color-danger !important;
+}
+
+.bg-info {
+    color: $color-white !important;
+    background-color: $color-info !important;
+    border-color: $color-info !important;
+}
+
+.bg-success {
+    color: $color-white !important;
+    background-color: $color-success !important;
+    border-color: $color-success !important;
+}
+
+.hide {
+    display: none !important;
 }
