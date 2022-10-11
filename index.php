@@ -1,3 +1,8 @@
+<?php
+ini_set('display_errors', 1);
+ini_set('display_startup_errors', 1);
+error_reporting(E_ALL);
+?>
 <!DOCTYPE html>
 <html lang="fr">
     <head>
@@ -5,7 +10,7 @@
         <meta http-equiv="X-UA-Compatible" content="IE=edge" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-        <title>Connecte-toi à ton compte SHOE</title>
+        <title>Habille tes pieds avec SHOE</title>
 
         <!-- Favicons -->
         <link rel="apple-touch-icon" sizes="152x152" href="apple-touch-icon.png" />
@@ -31,6 +36,8 @@
         ></script>
 
         <link rel="stylesheet" href="assets/css/styles.min.css" />
+
+        <script src="assets/js/index.js" type="module" defer></script>
     </head>
     <body>
         <!-- Application Header -->
@@ -44,7 +51,7 @@
 
             <!-- Application Navigation -->
             <nav class="app-navigation">
-                <a href="./">
+                <a href="./" class="active">
                     <i class="fa-solid fa-house"></i>
                     <span>Accueil</span>
                 </a>
@@ -52,7 +59,7 @@
                     <i class="fa-solid fa-user"></i>
                     <span>Compte</span>
                 </a>
-                <a href="connexion.html" class="active">
+                <a href="connexion.html">
                     <i class="fa-solid fa-user-lock"></i>
                     <span>Connexion</span>
                 </a>
@@ -67,99 +74,58 @@
             </nav>
         </header>
 
-        <!-- Application Alert -->
-        <div class="app-alert info">
-            <strong>Le savais-tu ?</strong>
-            Si tu as oublié ton mot de passe, félicitations !
-            <br />
-            C'est qu'il était difficile à retenir
-            <i class="fa-solid fa-face-smile-wink fa-lg"></i>
-        </div>
-
         <!-- Application Main -->
         <main class="app-main">
+            <!-- Page Cover -->
+            <section class="cover">
+                <div class="app-slider" id="slider">
+                    <!-- Slider Controls -->
+                    <div class="controls"></div>
+
+                    <!-- Slider Slides -->
+                </div>
+            </section>
+
+            <!-- Application Alert -->
+            <div class="app-alert info">
+                <strong>Le savais-tu ?</strong>
+                En fait, SHOE se prononce &laquo;&nbsp;choé&nbsp;&raquo;
+                <i class="fa-solid fa-face-smile-wink fa-lg"></i>
+            </div>
+
             <!-- Page Card -->
             <section class="card">
-                <h2>Connecte-toi à ton compte SHOE</h2>
+                <h2>Découvre ta nouvelle marque</h2>
                 <p class="text-justify">
-                    Si tu as déjà créé ton compte SHOE, et si tu te souviens de ton mot de
-                    passe
-                    <small>(bravo)</small>
-                    , alors connecte-toi, et retrouve tout
-                    comme tu l'avais laissé en partant la dernière fois. Pas mal, non ?
+                    Lorem ipsum dolor sit, amet consectetur adipisicing elit. Libero dicta
+                    iste blanditiis architecto omnis exercitationem dignissimos.
+                    Laboriosam, sequi. Quisquam quaerat saepe velit est quos hic quasi
+                    dolorum optio porro consequatur!
                 </p>
-
-                <p>
-                    <small>
-                        Ça
-                        <span class="required">*</span>
-                        , ça veut dire obligatoire !
-                    </small>
+                <div class="flex">
+                    <figure class="app-img">
+                        <img src="assets/img/handmade.jpg" alt="Fabrication artisanale" />
+                        <figcaption>
+                            Nos SHOE sont toutes fabriquées 100% artisanalement.
+                            <br />
+                            &laquo;&nbsp;a la mano&nbsp;&raquo; comme on dit
+                        </figcaption>
+                    </figure>
+                    <p>
+                        <img src="assets/img/made_in_france.png" alt="Fabriqué en France" />
+                    </p>
+                </div>
+                <p class="text-justify">
+                    Lorem ipsum dolor sit, amet consectetur adipisicing elit. Libero dicta
+                    iste blanditiis architecto omnis exercitationem dignissimos.
+                    Laboriosam, sequi. Quisquam quaerat saepe velit est quos hic quasi
+                    dolorum optio porro consequatur!
                 </p>
-
-                <form class="app-form">
-                    <div class="form-group">
-                        <label for="userEmail" class="required" title="Ton adresse e-mail">
-                            <i class="fa-solid fa-envelope"></i>
-                        </label>
-                        <input
-                                type="email"
-                                id="userEmail"
-                                name="email"
-                                class="form-control"
-                                placeholder="ex: sophie@dupont.com"
-                                required
-                                aria-required="true"
-                                aria-labelledby="emailHelp"
-                        />
-                        <p id="emailHelp">
-                            <small>Entre ton adresse e-mail</small>
-                        </p>
-                    </div>
-                    <div class="form-group">
-                        <label for="userPassword" class="required" title="Ton mot de passe">
-                            <i class="fa-solid fa-key"></i>
-                        </label>
-                        <input
-                                type="password"
-                                id="userPassword"
-                                name="password"
-                                class="form-control"
-                                required
-                                aria-required="true"
-                                aria-labelledby="passwordHelp"
-                        />
-                        <p id="passwordHelp">
-                            <small>Entre ton mot de passe</small>
-                        </p>
-                    </div>
-                    <button type="submit" class="app-btn cta">
-                        Connexion
-                        <i class="fa-solid fa-play"></i>
-                    </button>
-                </form>
-
-                <hr />
-
-                <p>
-                    <small>
-                        <a href="#">
-                            J'ai oublié mon mot de paaaasse
-                            <i class="fa-regular fa-face-sad-cry"></i>
-                        </a>
-                    </small>
-                </p>
-
-                <p>
-                    <small>
-                        <a href="inscription.html">
-                            Je n'ai pas encore créé mon compte SHOE
-                            <i class="fa-regular fa-face-surprise"></i>
-                            Vite vite je le fais !
-                        </a>
-                    </small>
-                </p>
+                <a href="inscription.html" class="app-btn cta"> Je crée mon compte</a>
             </section>
+
+            <?php $products = json_decode(file_get_contents("src/data/products.json"), true); ?>
+            <?php var_dump($products); ?>
         </main>
 
         <!-- Application Footer -->
