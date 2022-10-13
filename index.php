@@ -2,6 +2,19 @@
 ini_set('display_errors', 1);
 ini_set('display_startup_errors', 1);
 error_reporting(E_ALL);
+
+// Lecture d'un fichier JSON
+$productsString = file_get_contents("src/data/products.json");
+$products = json_decode($productsString, true);
+
+
+// Écriture d'un fichier JSON
+$content = [
+    'prenom' => 'Nicolas',
+    'nom' => 'Vauche',
+];
+$contentJson = json_encode($content);
+file_put_contents('src/data/test.json', $contentJson);
 ?>
 <!DOCTYPE html>
 <html lang="fr">
@@ -124,8 +137,27 @@ error_reporting(E_ALL);
                 <a href="inscription.html" class="app-btn cta"> Je crée mon compte</a>
             </section>
 
-            <?php $products = json_decode(file_get_contents("src/data/products.json"), true); ?>
-            <?php var_dump($products); ?>
+            <section class="card">
+                <h2>Nos chaussures</h2>
+
+                <div class="products grid">
+                    <?php foreach ($products as $product): ?>
+                        <div class="product grid-item">
+                            <img src="assets/img/catalog/shoes/<?php echo $product['img']['src']; ?>" alt="<?php echo $product['img']['alt']; ?>" />
+                            <h3><?php echo $product['title']; ?></h3>
+                            <p class="description"><?php echo $product['description']; ?></p>
+                            <p class="price">
+                                <?php echo NumberFormatter::create('fr-FR', NumberFormatter::CURRENCY)->format($product['price']); ?>
+                            </p>
+                            <?php if ($product['stock'] === 0): ?>
+                                <p class="stock nul">En précommande</p>
+                            <?php else: ?>
+                                <p class="stock">Il en reste <?php echo $product['stock']; ?></p>
+                            <?php endif; ?>
+                        </div>
+                    <?php endforeach; ?>
+                </div>
+            </section>
         </main>
 
         <!-- Application Footer -->
