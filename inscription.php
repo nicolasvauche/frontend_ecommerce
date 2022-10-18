@@ -2,16 +2,6 @@
 ini_set('display_errors', 1);
 ini_set('display_startup_errors', 1);
 error_reporting(E_ALL);
-
-require_once 'config/bdd.php';
-
-try {
-    $conn = new PDO("mysql:host=$servername;dbname=php_shoe", $username, $password);
-    echo "<strong>Tu es connecté à la base de données !!!</strong>";
-} catch (PDOException $exception) {
-    var_dump($exception);
-    exit;
-}
 ?>
 <!DOCTYPE html>
 <html lang="fr">

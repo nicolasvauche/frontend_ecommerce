@@ -3,20 +3,16 @@ ini_set('display_errors', 1);
 ini_set('display_startup_errors', 1);
 error_reporting(E_ALL);
 
-require('helpers/formvalidation.php');
-
+require_once('helpers/formvalidation.php');
+require_once 'classes/User.php';
 
 // Récupération des données
 $formData = $_POST;
-//var_dump($formData);
 
-// Validation des données
-/*if (empty($formData)) {
-    Header("Location: ../inscription.php");
-}*/
-
+// Initialisation du tableau d'erreurs de validation
 $errors = [];
 
+// Validation des champs
 foreach ($formData as $field => $value) {
     switch ($field) {
         case 'firstname':
@@ -58,5 +54,8 @@ foreach ($formData as $field => $value) {
             break;
     }
 }
-
 var_dump($errors);
+
+
+//
+$userModel = new User();
