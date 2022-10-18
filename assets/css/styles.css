@@ -6,24 +6,27 @@ body {
   justify-content: center;
   min-height: 100vh;
   font-family: "Roboto", sans-serif;
+  background-color: #ffffff;
 }
 
 h1 {
   padding-bottom: 0.5rem;
   margin-bottom: 2rem;
-  font-family: "Audiowide", cursive;
+  font-family: "Anton", cursive;
   font-size: 1.75rem;
   text-transform: uppercase;
   text-align: center;
   color: #3094c2;
-  border-bottom: 4px solid #c72027;
+  border-bottom: 4px solid #e75000;
 }
 
 h1 span {
-  color: #c72027;
+  color: #e75000;
 }
 
 img {
-  padding-top: 0.75rem;
-  border-top: 4px solid #3094c2;
+  padding: 0.5rem;
+  width: 40vw;
+  background-color: #272222;
+  border-radius: 0.5rem;
 }

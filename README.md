@@ -5,8 +5,7 @@ Analyse d’un brief, conception et réalisation d’un frontend e-commerce en d
 
 ## Brief client :  
 Créateur d’une marque de chaussures, je souhaite faire développer une boutique en ligne dédiée à ma marque. Pour l’instant je n’ai qu’une seule collection en vente, mais à terme je souhaite développer d’autres collections femme homme et enfant, déclinées selon l’activité : sport, travail, bureau, école etc…  
-Je n’ai pas encore de logo, car j’ai eu des soucis avec le graphiste que j’avais engagé. Le logo qu’il m’a fait n’est pas utilisable et je n’ai pas le droit d’en réutiliser les principes. Il faudra me faire trois propositions.  
-Je n’ai par conséquent pas de charte graphique, je dispose juste des visuels de mes produits, de leur description et de leur prix.  
+Je dispose d’un logo, d’une charte colorimétrique, des typographies, des visuels de mes produits, de leur description et de leur prix.  
 Je souhaite attirer et fidéliser tout de suite de nouveaux clients, grâce à la possibilité de créer un compte et de se connecter à son espace personnel sur le site : anciennes commandes, favoris, informations personnelles, de livraison et de paiement, etc.  
 Il faudrait que les gens puissent s’abonner à la newsletter  
 
@@ -45,25 +44,35 @@ Il faudrait que les gens puissent s’abonner à la newsletter
 ---
 
 ## Éléments conceptuels :  
-* Exemple de logo : [https://github.com/nicolasvauche/frontend_ecommerce/blob/master/assets/img/]
-* 4 photos de chaussures : [https://github.com/nicolasvauche/frontend_ecommerce/blob/master/assets/img/catalog/shoes/]
+* Logo : [https://github.com/nicolasvauche/frontend_ecommerce/blob/master/assets/img/]
+* Charte colorimétrique :
+    * white: #ffffff;
+    * brokenwhite: #f8f7f3;
+    * black: #000000;
+    * primary: #272222;
+    * secondary: #e75000;
+    * danger: #d13434;
+    * info: #2a94c2;
+    * success: #198754;
 * Typographies (Google Webfonts) :
     * Standard : Roboto
-    * Titres : Audiowide
-* Couleurs : à définir
+    * Titres : Anton
+* Visuels produits : [https://github.com/nicolasvauche/frontend_ecommerce/blob/master/assets/img/catalog/shoes/]
 
 ---
 
 ## Livrables :  
 * Zoning / Wireframes / Maquette :
     * Page d’accueil
-    * Page Connexion / Inscription
+    * Page Connexion
+    * Page Inscription
     * Espace Client :
         * Menu secondaire sur toutes les pages de l’Espace Client
         * Pages de l’Espace Client :
             * Mes informations personnelles
             * Mes adresses
-            * Mes commandes
             * Ma newsletter
+            * Mes précommandes
+            * Mes commandes
 * Maquette HTML5 + Bootstrap
 * Maquette HTML5 + SASS
