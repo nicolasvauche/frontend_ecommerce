@@ -76,7 +76,7 @@ file_put_contents('src/data/test.json', $contentJson);
                     <i class="fa-solid fa-user-lock"></i>
                     <span>Connexion</span>
                 </a>
-                <a href="inscription.html">
+                <a href="inscription.php">
                     <i class="fa-solid fa-user-plus"></i>
                     <span>Inscription</span>
                 </a>
@@ -134,7 +134,7 @@ file_put_contents('src/data/test.json', $contentJson);
                     Laboriosam, sequi. Quisquam quaerat saepe velit est quos hic quasi
                     dolorum optio porro consequatur!
                 </p>
-                <a href="inscription.html" class="app-btn cta"> Je crée mon compte</a>
+                <a href="inscription.php" class="app-btn cta"> Je crée mon compte</a>
             </section>
 
             <section class="card">

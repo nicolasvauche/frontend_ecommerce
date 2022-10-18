@@ -12,7 +12,7 @@ $formData = $_POST;
 
 // Validation des données
 /*if (empty($formData)) {
-    Header("Location: ../inscription.html");
+    Header("Location: ../inscription.php");
 }*/
 
 $errors = [];
