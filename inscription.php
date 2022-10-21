@@ -53,7 +53,7 @@ error_reporting(E_ALL);
                     <i class="fa-solid fa-house"></i>
                     <span>Accueil</span>
                 </a>
-                <a href="mon-compte.html">
+                <a href="mon-compte.php">
                     <i class="fa-solid fa-user"></i>
                     <span>Compte</span>
                 </a>

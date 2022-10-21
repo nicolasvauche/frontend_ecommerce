@@ -68,7 +68,7 @@ file_put_contents('src/data/test.json', $contentJson);
                     <i class="fa-solid fa-house"></i>
                     <span>Accueil</span>
                 </a>
-                <a href="mon-compte.html">
+                <a href="mon-compte.php">
                     <i class="fa-solid fa-user"></i>
                     <span>Compte</span>
                 </a>
