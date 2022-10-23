@@ -4,19 +4,6 @@ ini_set('display_startup_errors', 1);
 error_reporting(E_ALL);
 
 session_start();
-
-// Lecture d'un fichier JSON
-$productsString = file_get_contents("src/data/products.json");
-$products = json_decode($productsString, true);
-
-
-// Écriture d'un fichier JSON
-$content = [
-    'prenom' => 'Nicolas',
-    'nom' => 'Vauche',
-];
-$contentJson = json_encode($content);
-file_put_contents('src/data/test.json', $contentJson);
 ?>
 <!DOCTYPE html>
 <html lang="fr">
@@ -25,7 +12,7 @@ file_put_contents('src/data/test.json', $contentJson);
         <meta http-equiv="X-UA-Compatible" content="IE=edge" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-        <title>Habille tes pieds avec SHOE</title>
+        <title>Tes adresses - Ton compte SHOE</title>
 
         <!-- Favicons -->
         <link rel="apple-touch-icon" sizes="152x152" href="apple-touch-icon.png" />
@@ -51,10 +38,8 @@ file_put_contents('src/data/test.json', $contentJson);
         ></script>
 
         <link rel="stylesheet" href="assets/css/styles.min.css" />
-
-        <script src="assets/js/index.js" type="module" defer></script>
     </head>
-    <body>
+    <body class="compte">
         <!-- Application Header -->
         <header class="app-header">
             <a href="./" class="app-brandname">
@@ -66,12 +51,12 @@ file_put_contents('src/data/test.json', $contentJson);
 
             <!-- Application Navigation -->
             <nav class="app-navigation">
-                <a href="./" class="active">
+                <a href="./">
                     <i class="fa-solid fa-house"></i>
                     <span>Accueil</span>
                 </a>
                 <?php if (isset($_SESSION['userid'])): ?>
-                    <a href="mon-compte.php">
+                    <a href="mon-compte.php" class="active">
                         <i class="fa-solid fa-user"></i>
                         <span>Compte</span>
                     </a>
@@ -96,77 +81,126 @@ file_put_contents('src/data/test.json', $contentJson);
             </nav>
         </header>
 
+        <!-- Application Alert -->
+        <div class="app-alert info">
+            <strong>Le savais-tu ?</strong>
+            Tu peux gérer plusieurs adresses de livraison, c'est pratique si tu veux
+            envoyer un cadeau à un ami !
+            <i class="fa-solid fa-face-smile-wink fa-lg"></i>
+        </div>
+
         <!-- Application Main -->
         <main class="app-main">
-            <!-- Page Cover -->
-            <section class="cover">
-                <div class="app-slider" id="slider">
-                    <!-- Slider Controls -->
-                    <div class="controls"></div>
-
-                    <!-- Slider Slides -->
+            <div class="grid">
+                <!-- Sub Menu Espace client -->
+                <div class="app-subnavigation" role="navigation">
+                    <a href="mon-compte.php">
+                        <i class="fa-solid fa-user"></i>
+                        <span>Mon compte</span>
+                    </a>
+                    <a href="mes-adresses.php" class="active">
+                        <i class="fa-solid fa-address-book"></i>
+                        <span>Mes adresses</span>
+                    </a>
+                    <a href="mon-courrier.php">
+                        <i class="fa-regular fa-envelope"></i>
+                        <span>Mon courrier</span>
+                    </a>
+                    <a href="mon-panier.php" class="hide">
+                        <i class="fa-solid fa-cart-shopping"></i>
+                        <span>Mon panier</span>
+                    </a>
+                    <a href="mes-precommandes.php">
+                        <i class="fa-solid fa-person-praying"></i>
+                        <span>Mes précommandes</span>
+                    </a>
+                    <a href="mes-commandes.php">
+                        <i class="fa-solid fa-chalkboard-user"></i>
+                        <span>Mes commandes</span>
+                    </a>
+                    <hr />
+                    <a href="./" onclick="return window.confirm('Tu veux partir ?');">
+                        <i class="fa-solid fa-user-slash text-danger"></i>
+                        <span>Déconnexion</span>
+                    </a>
                 </div>
-            </section>
 
-            <!-- Application Alert -->
-            <div class="app-alert info">
-                <strong>Le savais-tu ?</strong>
-                En fait, SHOE se prononce &laquo;&nbsp;choé&nbsp;&raquo;
-                <i class="fa-solid fa-face-smile-wink fa-lg"></i>
-            </div>
-
-            <!-- Page Card -->
-            <section class="card">
-                <h2>Découvre ta nouvelle marque</h2>
-                <p class="text-justify">
-                    Lorem ipsum dolor sit, amet consectetur adipisicing elit. Libero dicta
-                    iste blanditiis architecto omnis exercitationem dignissimos.
-                    Laboriosam, sequi. Quisquam quaerat saepe velit est quos hic quasi
-                    dolorum optio porro consequatur!
-                </p>
-                <div class="flex">
-                    <figure class="app-img">
-                        <img src="assets/img/handmade.jpg" alt="Fabrication artisanale" />
-                        <figcaption>
-                            Nos SHOE sont toutes fabriquées 100% artisanalement.
-                            <br />
-                            &laquo;&nbsp;a la mano&nbsp;&raquo; comme on dit
-                        </figcaption>
-                    </figure>
-                    <p>
-                        <img src="assets/img/made_in_france.png" alt="Fabriqué en France" />
+                <!-- Page Card -->
+                <section class="card">
+                    <h2>Gère tes adresses ici</h2>
+                    <p class="text-justify">
+                        Ici, tu enregistres tes adresses de livraison et de facturation.
+                        <br />
+                        C'est pratique car comme ça, tu pourras choisir facilement et vite
+                        fait celles qui te conviennent au moment de commander tes chaussures
+                        SHOE.
                     </p>
-                </div>
-                <p class="text-justify">
-                    Lorem ipsum dolor sit, amet consectetur adipisicing elit. Libero dicta
-                    iste blanditiis architecto omnis exercitationem dignissimos.
-                    Laboriosam, sequi. Quisquam quaerat saepe velit est quos hic quasi
-                    dolorum optio porro consequatur!
-                </p>
-                <a href="inscription.php" class="app-btn cta"> Je crée mon compte</a>
-            </section>
 
-            <section class="card">
-                <h2>Nos chaussures</h2>
-
-                <div class="products grid">
-                    <?php foreach ($products as $product): ?>
-                        <div class="product grid-item">
-                            <img src="assets/img/catalog/shoes/<?php echo $product['img']['src']; ?>" alt="<?php echo $product['img']['alt']; ?>" />
-                            <h3><?php echo $product['title']; ?></h3>
-                            <p class="description"><?php echo $product['description']; ?></p>
-                            <p class="price">
-                                <?php echo NumberFormatter::create('fr-FR', NumberFormatter::CURRENCY)->format($product['price']); ?>
-                            </p>
-                            <?php if ($product['stock'] === 0): ?>
-                                <p class="stock nul">En précommande</p>
-                            <?php else: ?>
-                                <p class="stock">Il en reste <?php echo $product['stock']; ?></p>
-                            <?php endif; ?>
+                    <div class="grid">
+                        <div class="addresses">
+                            <h3>Livraison</h3>
+                            <div class="grid">
+                                <div class="grid-item">
+                                    <i class="fa-solid fa-truck-fast"></i>
+                                    <h4 class="item-title">Maison</h4>
+                                    <address class="item-body">
+                                        17 rue Jules Jacob
+                                        <br />
+                                        23002 MAVILLE
+                                    </address>
+                                    <div class="item-actions">
+                                        <a href="#" class="text-danger">
+                                            <i class="fa-solid fa-trash-can"></i>
+                                        </a>
+                                        <a href="#">
+                                            <i class="fa-solid fa-pen-to-square"></i>
+                                        </a>
+                                    </div>
+                                </div>
+                                <div class="grid-item">
+                                    <i class="fa-solid fa-truck-fast"></i>
+                                    <h4 class="item-title">Maman</h4>
+                                    <address class="item-body">
+                                        18 rue Jules Jacob
+                                        <br />
+                                        23002 NOTREVILLE
+                                    </address>
+                                    <div class="item-actions">
+                                        <a href="#" class="text-danger">
+                                            <i class="fa-solid fa-trash-can"></i>
+                                        </a>
+                                        <a href="#">
+                                            <i class="fa-solid fa-pen-to-square"></i>
+                                        </a>
+                                    </div>
+                                </div>
+                            </div>
                         </div>
-                    <?php endforeach; ?>
-                </div>
-            </section>
+                        <div class="addresses">
+                            <h3>Facturation</h3>
+                            <div class="grid">
+                                <div class="grid-item">
+                                    <i class="fa-solid fa-money-bill-wave"></i>
+                                    <h4 class="item-title">Moi</h4>
+                                    <address class="item-body">
+                                        17 rue Jules Jacob
+                                        <br />
+                                        23002 MAVILLE
+                                    </address>
+                                    <div class="item-actions">
+                                        <a href="#" class="text-danger">
+                                            <i class="fa-solid fa-trash-can"></i>
+                                        </a>
+                                        <a href="#">
+                                            <i class="fa-solid fa-pen-to-square"></i>
+                                        </a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+            </div>
         </main>
 
         <!-- Application Footer -->

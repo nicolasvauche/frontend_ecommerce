@@ -1,3 +1,10 @@
+<?php
+ini_set('display_errors', 1);
+ini_set('display_startup_errors', 1);
+error_reporting(E_ALL);
+
+session_start();
+?>
 <!DOCTYPE html>
 <html lang="fr">
     <head>
@@ -5,7 +12,7 @@
         <meta http-equiv="X-UA-Compatible" content="IE=edge" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-        <title>Connecte-toi à ton compte SHOE</title>
+        <title>Tes commandes - Ton compte SHOE</title>
 
         <!-- Favicons -->
         <link rel="apple-touch-icon" sizes="152x152" href="apple-touch-icon.png" />
@@ -32,7 +39,7 @@
 
         <link rel="stylesheet" href="assets/css/styles.min.css" />
     </head>
-    <body>
+    <body class="compte">
         <!-- Application Header -->
         <header class="app-header">
             <a href="./" class="app-brandname">
@@ -48,19 +55,26 @@
                     <i class="fa-solid fa-house"></i>
                     <span>Accueil</span>
                 </a>
-                <a href="mon-compte.php">
-                    <i class="fa-solid fa-user"></i>
-                    <span>Compte</span>
-                </a>
-                <a href="connexion.html" class="active">
-                    <i class="fa-solid fa-user-lock"></i>
-                    <span>Connexion</span>
-                </a>
-                <a href="inscription.php">
-                    <i class="fa-solid fa-user-plus"></i>
-                    <span>Inscription</span>
-                </a>
-                <a href="mon-panier.html" class="hide">
+                <?php if (isset($_SESSION['userid'])): ?>
+                    <a href="mon-compte.php" class="active">
+                        <i class="fa-solid fa-user"></i>
+                        <span>Compte</span>
+                    </a>
+                    <a href="php/deconnexion.php" onclick="return window.confirm('Tu pars ?')">
+                        <i class="fa-solid fa-person-running"></i>
+                        <span>Déconnexion</span>
+                    </a>
+                <?php else: ?>
+                    <a href="connexion.php">
+                        <i class="fa-solid fa-user-lock"></i>
+                        <span>Connexion</span>
+                    </a>
+                    <a href="inscription.php">
+                        <i class="fa-solid fa-user-plus"></i>
+                        <span>Inscription</span>
+                    </a>
+                <?php endif; ?>
+                <a href="mon-panier.php" class="hide">
                     <i class="fa-solid fa-cart-shopping"></i>
                     <span>Panier</span>
                 </a>
@@ -70,96 +84,61 @@
         <!-- Application Alert -->
         <div class="app-alert info">
             <strong>Le savais-tu ?</strong>
-            Si tu as oublié ton mot de passe, félicitations !
-            <br />
-            C'est qu'il était difficile à retenir
+            Tu peux re-commander des chaussures si tu en veux une autre paire
             <i class="fa-solid fa-face-smile-wink fa-lg"></i>
         </div>
 
         <!-- Application Main -->
         <main class="app-main">
-            <!-- Page Card -->
-            <section class="card">
-                <h2>Connecte-toi à ton compte SHOE</h2>
-                <p class="text-justify">
-                    Si tu as déjà créé ton compte SHOE, et si tu te souviens de ton mot de
-                    passe
-                    <small>(bravo)</small>
-                    , alors connecte-toi, et retrouve tout
-                    comme tu l'avais laissé en partant la dernière fois. Pas mal, non ?
-                </p>
+            <div class="grid">
+                <!-- Sub Menu Espace client -->
+                <div class="app-subnavigation" role="navigation">
+                    <a href="mon-compte.php">
+                        <i class="fa-solid fa-user"></i>
+                        <span>Mon compte</span>
+                    </a>
+                    <a href="mes-adresses.php">
+                        <i class="fa-solid fa-address-book"></i>
+                        <span>Mes adresses</span>
+                    </a>
+                    <a href="mon-courrier.php">
+                        <i class="fa-regular fa-envelope"></i>
+                        <span>Mon courrier</span>
+                    </a>
+                    <a href="mon-panier.php" class="hide">
+                        <i class="fa-solid fa-cart-shopping"></i>
+                        <span>Mon panier</span>
+                    </a>
+                    <a href="mes-precommandes.php">
+                        <i class="fa-solid fa-person-praying"></i>
+                        <span>Mes précommandes</span>
+                    </a>
+                    <a href="mes-commandes.php" class="active">
+                        <i class="fa-solid fa-chalkboard-user"></i>
+                        <span>Mes commandes</span>
+                    </a>
+                    <hr />
+                    <a href="./" onclick="return window.confirm('Tu veux partir ?');">
+                        <i class="fa-solid fa-user-slash text-danger"></i>
+                        <span>Déconnexion</span>
+                    </a>
+                </div>
 
-                <p>
-                    <small>
-                        Ça
-                        <span class="required">*</span>
-                        , ça veut dire obligatoire !
-                    </small>
-                </p>
+                <!-- Page Card -->
+                <section class="card">
+                    <h2>Tes commandes</h2>
+                    <p class="text-justify">
+                        Waou, t'en as des belles chaussures
+                        <i class="fa-regular fa-face-grin-hearts"></i>
+                        <br />
+                        Sur cette page, retrouve tout ce que tu as acheté chez SHOE,
+                        recommande nos produits, re-commande nos produits, enfin fais ce que
+                        tu veux…
+                    </p>
 
-                <form class="app-form" action="php/connexion.php" method="post">
-                    <div class="form-group">
-                        <label for="userEmail" class="required" title="Ton adresse e-mail">
-                            <i class="fa-solid fa-envelope"></i>
-                        </label>
-                        <input
-                                type="email"
-                                id="userEmail"
-                                name="email"
-                                class="form-control"
-                                placeholder="ex: sophie@dupont.com"
-                                required
-                                aria-required="true"
-                                aria-labelledby="emailHelp"
-                        />
-                        <p id="emailHelp">
-                            <small>Entre ton adresse e-mail</small>
-                        </p>
-                    </div>
-                    <div class="form-group">
-                        <label for="userPassword" class="required" title="Ton mot de passe">
-                            <i class="fa-solid fa-key"></i>
-                        </label>
-                        <input
-                                type="password"
-                                id="userPassword"
-                                name="password"
-                                class="form-control"
-                                required
-                                aria-required="true"
-                                aria-labelledby="passwordHelp"
-                        />
-                        <p id="passwordHelp">
-                            <small>Entre ton mot de passe</small>
-                        </p>
-                    </div>
-                    <button type="submit" class="app-btn cta">
-                        Connexion
-                        <i class="fa-solid fa-play"></i>
-                    </button>
-                </form>
-
-                <hr />
-
-                <p>
-                    <small>
-                        <a href="#">
-                            J'ai oublié mon mot de paaaasse
-                            <i class="fa-regular fa-face-sad-cry"></i>
-                        </a>
-                    </small>
-                </p>
-
-                <p>
-                    <small>
-                        <a href="inscription.php">
-                            Je n'ai pas encore créé mon compte SHOE
-                            <i class="fa-regular fa-face-surprise"></i>
-                            Vite vite je le fais !
-                        </a>
-                    </small>
-                </p>
-            </section>
+                    <p class="text-success">Aucune commande pour l'instant…</p>
+                </section>
+            </div>
         </main>
 
         <!-- Application Footer -->

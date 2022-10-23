@@ -4,19 +4,6 @@ ini_set('display_startup_errors', 1);
 error_reporting(E_ALL);
 
 session_start();
-
-// Lecture d'un fichier JSON
-$productsString = file_get_contents("src/data/products.json");
-$products = json_decode($productsString, true);
-
-
-// Écriture d'un fichier JSON
-$content = [
-    'prenom' => 'Nicolas',
-    'nom' => 'Vauche',
-];
-$contentJson = json_encode($content);
-file_put_contents('src/data/test.json', $contentJson);
 ?>
 <!DOCTYPE html>
 <html lang="fr">
@@ -25,7 +12,7 @@ file_put_contents('src/data/test.json', $contentJson);
         <meta http-equiv="X-UA-Compatible" content="IE=edge" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-        <title>Habille tes pieds avec SHOE</title>
+        <title>Ton panier - Ton compte SHOE</title>
 
         <!-- Favicons -->
         <link rel="apple-touch-icon" sizes="152x152" href="apple-touch-icon.png" />
@@ -52,9 +39,9 @@ file_put_contents('src/data/test.json', $contentJson);
 
         <link rel="stylesheet" href="assets/css/styles.min.css" />
 
-        <script src="assets/js/index.js" type="module" defer></script>
+        <script src="assets/js/cart.js" type="module" defer></script>
     </head>
-    <body>
+    <body class="panier">
         <!-- Application Header -->
         <header class="app-header">
             <a href="./" class="app-brandname">
@@ -66,7 +53,7 @@ file_put_contents('src/data/test.json', $contentJson);
 
             <!-- Application Navigation -->
             <nav class="app-navigation">
-                <a href="./" class="active">
+                <a href="./">
                     <i class="fa-solid fa-house"></i>
                     <span>Accueil</span>
                 </a>
@@ -89,84 +76,51 @@ file_put_contents('src/data/test.json', $contentJson);
                         <span>Inscription</span>
                     </a>
                 <?php endif; ?>
-                <a href="mon-panier.php" class="hide">
+                <a href="mon-panier.php" class="active">
                     <i class="fa-solid fa-cart-shopping"></i>
                     <span>Panier</span>
                 </a>
             </nav>
         </header>
 
+        <!-- Application Alert -->
+        <div class="app-alert info">
+            <strong>Le savais-tu ?</strong>
+            Si tu laisses des SHOE trop longtemps dans ton panier, au bout d'un moment
+            elles vont s'en aller
+            <i class="fa-solid fa-face-smile-wink fa-lg"></i>
+        </div>
+
         <!-- Application Main -->
         <main class="app-main">
-            <!-- Page Cover -->
-            <section class="cover">
-                <div class="app-slider" id="slider">
-                    <!-- Slider Controls -->
-                    <div class="controls"></div>
-
-                    <!-- Slider Slides -->
-                </div>
-            </section>
-
-            <!-- Application Alert -->
-            <div class="app-alert info">
-                <strong>Le savais-tu ?</strong>
-                En fait, SHOE se prononce &laquo;&nbsp;choé&nbsp;&raquo;
-                <i class="fa-solid fa-face-smile-wink fa-lg"></i>
-            </div>
-
-            <!-- Page Card -->
-            <section class="card">
-                <h2>Découvre ta nouvelle marque</h2>
-                <p class="text-justify">
-                    Lorem ipsum dolor sit, amet consectetur adipisicing elit. Libero dicta
-                    iste blanditiis architecto omnis exercitationem dignissimos.
-                    Laboriosam, sequi. Quisquam quaerat saepe velit est quos hic quasi
-                    dolorum optio porro consequatur!
-                </p>
-                <div class="flex">
-                    <figure class="app-img">
-                        <img src="assets/img/handmade.jpg" alt="Fabrication artisanale" />
-                        <figcaption>
-                            Nos SHOE sont toutes fabriquées 100% artisanalement.
-                            <br />
-                            &laquo;&nbsp;a la mano&nbsp;&raquo; comme on dit
-                        </figcaption>
-                    </figure>
-                    <p>
-                        <img src="assets/img/made_in_france.png" alt="Fabriqué en France" />
+            <div class="grid">
+                <!-- Page Card -->
+                <section class="card">
+                    <h2>Ton panier</h2>
+                    <p class="text-justify">
+                        C'est tes courses
+                        <i class="fa-regular fa-face-smile-beam"></i>
+                        Sur cette page,
+                        retrouve tout ce que tu as sélectionné chez SHOE
                     </p>
-                </div>
-                <p class="text-justify">
-                    Lorem ipsum dolor sit, amet consectetur adipisicing elit. Libero dicta
-                    iste blanditiis architecto omnis exercitationem dignissimos.
-                    Laboriosam, sequi. Quisquam quaerat saepe velit est quos hic quasi
-                    dolorum optio porro consequatur!
-                </p>
-                <a href="inscription.php" class="app-btn cta"> Je crée mon compte</a>
-            </section>
 
-            <section class="card">
-                <h2>Nos chaussures</h2>
+                    <!-- Panier freeshipping -->
+                    <p id="cartFreeshipping">
+                        <small>Il reste 99€ pour avoir la livraison gratuite</small>
+                    </p>
 
-                <div class="products grid">
-                    <?php foreach ($products as $product): ?>
-                        <div class="product grid-item">
-                            <img src="assets/img/catalog/shoes/<?php echo $product['img']['src']; ?>" alt="<?php echo $product['img']['alt']; ?>" />
-                            <h3><?php echo $product['title']; ?></h3>
-                            <p class="description"><?php echo $product['description']; ?></p>
-                            <p class="price">
-                                <?php echo NumberFormatter::create('fr-FR', NumberFormatter::CURRENCY)->format($product['price']); ?>
-                            </p>
-                            <?php if ($product['stock'] === 0): ?>
-                                <p class="stock nul">En précommande</p>
-                            <?php else: ?>
-                                <p class="stock">Il en reste <?php echo $product['stock']; ?></p>
-                            <?php endif; ?>
-                        </div>
-                    <?php endforeach; ?>
-                </div>
-            </section>
+                    <!-- Panier items -->
+                    <div id="cart" class="app-cart">
+                        <div class="cart-items"></div>
+                    </div>
+                </section>
+
+                <!-- Sub Menu Panier -->
+                <aside class="summary">
+                    <h3>Résumé</h3>
+                    <p>Aucun article</p>
+                </aside>
+            </div>
         </main>
 
         <!-- Application Footer -->

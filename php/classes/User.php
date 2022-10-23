@@ -50,16 +50,36 @@ class User extends Bdd
 
     public function create()
     {
-        $sql = 'INSERT INTO user (firstname, lastname, email, password) VALUES (?, ?, ?, ?)';
+        if (!$this->checkEmailExists()) {
+            $sql = 'INSERT INTO user (firstname, lastname, email, password) VALUES (?, ?, ?, ?)';
+
+            try {
+                $statement = $this->getConnection()->prepare($sql);
+                $statement->execute([$this->firstname, $this->lastname, $this->email, password_hash($this->password, PASSWORD_DEFAULT)]);
+            } catch (PDOException $exception) {
+                var_dump($exception);
+                exit;
+            }
+
+            return true;
+        } else {
+            return ['email' => 'Cet utilisateur existe déjà…'];
+        }
+    }
+
+    public function checkEmailExists()
+    {
+        $sql = 'SELECT id FROM user WHERE email = ?';
 
         try {
             $statement = $this->getConnection()->prepare($sql);
-            $statement->execute([$this->firstname, $this->lastname, $this->email, password_hash($this->password, PASSWORD_DEFAULT)]);
+            $statement->execute([$this->email]);
+            $user = $statement->fetch(PDO::FETCH_ASSOC);
+
+            return $user;
         } catch (PDOException $exception) {
             var_dump($exception);
             exit;
         }
-
-        echo '<p><strong>Ton utilisateur a bien été créé !</strong></p>';
     }
 }

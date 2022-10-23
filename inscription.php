@@ -2,6 +2,11 @@
 ini_set('display_errors', 1);
 ini_set('display_startup_errors', 1);
 error_reporting(E_ALL);
+
+session_start();
+if (isset($_SESSION['userid'])) {
+    Header('Location: ./');
+}
 ?>
 <!DOCTYPE html>
 <html lang="fr">
@@ -36,6 +41,8 @@ error_reporting(E_ALL);
         ></script>
 
         <link rel="stylesheet" href="assets/css/styles.min.css" />
+
+        <script src="assets/js/formerrors.js" defer></script>
     </head>
     <body>
         <!-- Application Header -->
@@ -53,11 +60,7 @@ error_reporting(E_ALL);
                     <i class="fa-solid fa-house"></i>
                     <span>Accueil</span>
                 </a>
-                <a href="mon-compte.php">
-                    <i class="fa-solid fa-user"></i>
-                    <span>Compte</span>
-                </a>
-                <a href="connexion.html">
+                <a href="connexion.php">
                     <i class="fa-solid fa-user-lock"></i>
                     <span>Connexion</span>
                 </a>
@@ -65,7 +68,7 @@ error_reporting(E_ALL);
                     <i class="fa-solid fa-user-plus"></i>
                     <span>Inscription</span>
                 </a>
-                <a href="mon-panier.html" class="hide">
+                <a href="mon-panier.php" class="hide">
                     <i class="fa-solid fa-cart-shopping"></i>
                     <span>Panier</span>
                 </a>
@@ -234,7 +237,7 @@ error_reporting(E_ALL);
 
                 <p>
                     <small>
-                        <a href="connexion.html">
+                        <a href="connexion.php">
                             Ah mince
                             <i class="fa-regular fa-face-rolling-eyes"></i>
                             J'ai déjà

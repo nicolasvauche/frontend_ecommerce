@@ -6,7 +6,7 @@ error_reporting(E_ALL);
 // Validation de l'absence de caractères spéciaux
 function validateSpecialChars($value)
 {
-    return preg_match("/^[A-z]*((-|\s-)*[A-z])*$/", $value);
+    return preg_match("/^[a-zA-ZàáâäãåąčćęèéêëėįìíîïłńòóôöõøùúûüųūÿýżźñçčšžÀÁÂÄÃÅĄĆČĖĘÈÉÊËÌÍÎÏĮŁŃÒÓÔÖÕØÙÚÛÜŲŪŸÝŻŹÑßÇŒÆČŠŽ∂ð ,.'-]+$/u", $value);
 }
 
 // Validation du format de l'email
@@ -18,6 +18,7 @@ function validateEmail($value)
 // Validation du format du mot de passe
 function validatePassword($value)
 {
+    return true;
     return preg_match("/^(?=.*[A-Za-z])(?=.*\d)(?=.*[@$!%*#?&])[A-Za-z\d@$!%*#?&]{8,}$/", $value);
 }
 

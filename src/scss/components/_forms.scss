@@ -3,7 +3,7 @@
 
     .form-group {
         position: relative;
-        @include displayFlex(center);
+        @include displayFlex(center, flex-start);
         flex-wrap: wrap;
         margin-bottom: 1rem;
 
@@ -15,6 +15,13 @@
 
             small {
                 font-size: 0.75rem !important;
+            }
+
+            &.error {
+                margin-top: 0.25rem;
+                font-size: 0.9rem;
+                font-weight: bold;
+                color: $color-danger;
             }
         }
 

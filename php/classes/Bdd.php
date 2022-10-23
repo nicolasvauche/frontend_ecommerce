@@ -16,15 +16,14 @@ class Bdd
 
     public function connect()
     {
-        require_once '../config/bdd.php';
-
         try {
-            $this->connection = new PDO("mysql:host=$servername;dbname=php_shoe", $username, $password);
+            require_once '../config/bdd.php';
+            $this->connection = new PDO("mysql:host=" . getenv('DB_HOST') . ";dbname=" . getenv('DB_NAME'), getenv('DB_USER'), getenv('DB_PASSWORD'));
         } catch (PDOException $exception) {
             var_dump($exception);
             exit;
         }
 
-        echo "<p><strong>Tu es connecté à la base de données !!!</strong></p>";
+        //echo "<p><strong>Tu es connecté à la base de données !!!</strong></p>";
     }
 }

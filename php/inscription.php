@@ -1,6 +1,7 @@
 <?php
 require_once 'helpers/formvalidation.php';
 require_once 'classes/User.php';
+require_once 'classes/Authentication.php';
 
 // Récupération des données
 $formData = $_POST;
@@ -56,13 +57,27 @@ foreach ($formData as $field => $value) {
             break;
     }
 }
-//var_dump($errors);
 
-
-// Ajout d'un utilisateur en base de données
-$user = new User();
-$user->setFirstname($formData['firstname']);
-$user->setLastname($formData['lastname']);
-$user->setEmail($formData['email']);
-$user->setPassword($formData['password']);
-$user->create();
+if (!empty($errors)) {
+    // Redirection vers le formulaire
+    Header('Location: ../inscription.php?errors=' . json_encode($errors) . '&formdata=' . json_encode($formData));
+} else {
+    // Ajout d'un utilisateur en base de données
+    $user = new User();
+    $user->setFirstname($formData['firstname']);
+    $user->setLastname($formData['lastname']);
+    $user->setEmail($formData['email']);
+    $user->setPassword($formData['password']);
+    $return = $user->create();
+    if (!is_array($return)) {
+        // Connexion automatique
+        $auth = new Authentication();
+        if ($auth->login(['email' => $formData['email'], 'password' => $formData['password']])) {
+            Header('Location: ../mon-compte.php');
+        }
+    } else {
+        unset($formData['password']);
+        unset($formData['passwordconfirm']);
+        Header('Location: ../inscription.php?errors=' . json_encode($return) . '&formdata=' . json_encode($formData));
+    }
+}

@@ -41,11 +41,18 @@ foreach ($formData as $field => $value) {
             break;
     }
 }
-//var_dump($errors);
-
-// Authentification de l'utilisateur
-$auth = new Authentication();
-$auth->login($formData);
-
-// On redirige vers l'espace perso
-Header('Location: ../mon-compte.php');
+if (!empty($errors)) {
+    // Redirection vers le formulaire
+    Header('Location: ../connexion.php?errors=' . json_encode($errors) . '&formdata=' . json_encode($formData));
+} else {
+    // Authentification de l'utilisateur
+    $auth = new Authentication();
+    $getAuth = $auth->login($formData);
+    if (!is_array($getAuth)) {
+        Header('Location: ../mon-compte.php');
+    } else {
+        // Redirection vers le formulaire
+        unset($formData['password']);
+        Header('Location: ../connexion.php?errors=' . json_encode($getAuth) . '&formdata=' . json_encode($formData));
+    }
+}

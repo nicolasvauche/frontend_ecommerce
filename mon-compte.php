@@ -1,8 +1,12 @@
 <?php
+ini_set('display_errors', 1);
+ini_set('display_startup_errors', 1);
+error_reporting(E_ALL);
+
 session_start();
 if (!$_SESSION['userid']) {
     // On redirige vers la page de connexion
-    Header('Location: connexion.html');
+    Header('Location: connexion.php');
 }
 ?>
 
@@ -56,19 +60,26 @@ if (!$_SESSION['userid']) {
                     <i class="fa-solid fa-house"></i>
                     <span>Accueil</span>
                 </a>
-                <a href="mon-compte.html" class="active">
-                    <i class="fa-solid fa-user"></i>
-                    <span>Compte</span>
-                </a>
-                <a href="connexion.html">
-                    <i class="fa-solid fa-user-lock"></i>
-                    <span>Connexion</span>
-                </a>
-                <a href="inscription.php">
-                    <i class="fa-solid fa-user-plus"></i>
-                    <span>Inscription</span>
-                </a>
-                <a href="mon-panier.html" class="hide">
+                <?php if (isset($_SESSION['userid'])): ?>
+                    <a href="mon-compte.php" class="active">
+                        <i class="fa-solid fa-user"></i>
+                        <span>Compte</span>
+                    </a>
+                    <a href="php/deconnexion.php" onclick="return window.confirm('Tu pars ?')">
+                        <i class="fa-solid fa-person-running"></i>
+                        <span>Déconnexion</span>
+                    </a>
+                <?php else: ?>
+                    <a href="connexion.php">
+                        <i class="fa-solid fa-user-lock"></i>
+                        <span>Connexion</span>
+                    </a>
+                    <a href="inscription.php">
+                        <i class="fa-solid fa-user-plus"></i>
+                        <span>Inscription</span>
+                    </a>
+                <?php endif; ?>
+                <a href="mon-panier.php" class="hide">
                     <i class="fa-solid fa-cart-shopping"></i>
                     <span>Panier</span>
                 </a>
@@ -87,27 +98,27 @@ if (!$_SESSION['userid']) {
             <div class="grid">
                 <!-- Sub Menu Espace client -->
                 <div class="app-subnavigation" role="navigation">
-                    <a href="mon-compte.html" class="active">
+                    <a href="mon-compte.php" class="active">
                         <i class="fa-solid fa-user"></i>
                         <span>Mon compte</span>
                     </a>
-                    <a href="mes-adresses.html">
+                    <a href="mes-adresses.php">
                         <i class="fa-solid fa-address-book"></i>
                         <span>Mes adresses</span>
                     </a>
-                    <a href="mon-courrier.html">
+                    <a href="mon-courrier.php">
                         <i class="fa-regular fa-envelope"></i>
                         <span>Mon courrier</span>
                     </a>
-                    <a href="mon-panier.html" class="hide">
+                    <a href="mon-panier.php" class="hide">
                         <i class="fa-solid fa-cart-shopping"></i>
                         <span>Mon panier</span>
                     </a>
-                    <a href="mes-precommandes.html">
+                    <a href="mes-precommandes.php">
                         <i class="fa-solid fa-person-praying"></i>
                         <span>Mes précommandes</span>
                     </a>
-                    <a href="mes-commandes.html">
+                    <a href="mes-commandes.php">
                         <i class="fa-solid fa-chalkboard-user"></i>
                         <span>Mes commandes</span>
                     </a>

@@ -26,12 +26,12 @@ class Authentication extends Bdd
                 session_start();
                 $_SESSION['userid'] = $user['id'];
 
-                echo '<p><strong>Bienvenue chez toi, ' . $user['firstname'] . ' !</strong></p>';
+                return true;
             } else {
-                echo "<p><strong>T'as pas mis le bon mot de passe :(</strong></p>";
+                return ['password' => "T'as pas mis le bon mot de passe :("];
             }
         } else {
-            echo "<p><strong>Tu n'existes pas :(</strong></p>";
+            return ['email' => "Ah non, nous n'avons jamais enregistré cette adresse e-mail"];
         }
     }
 }
