@@ -17,7 +17,7 @@ class Bdd
     public function connect()
     {
         try {
-            require_once '../config/bdd.php';
+            require_once $_SERVER['DOCUMENT_ROOT'] . '/shoe/config/bdd.php';
             $this->connection = new PDO("mysql:host=" . getenv('DB_HOST') . ";dbname=" . getenv('DB_NAME'), getenv('DB_USER'), getenv('DB_PASSWORD'));
         } catch (PDOException $exception) {
             var_dump($exception);

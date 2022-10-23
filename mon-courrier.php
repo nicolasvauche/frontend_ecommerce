@@ -4,6 +4,14 @@ ini_set('display_startup_errors', 1);
 error_reporting(E_ALL);
 
 session_start();
+
+require_once 'php/classes/User.php';
+$user = new User($_SESSION['userid']);
+
+if (!$user) {
+    var_dump('Aucun utilisateur trouvé');
+    exit;
+}
 ?>
 <!DOCTYPE html>
 <html lang="fr">
@@ -160,6 +168,7 @@ session_start();
                                     id="newsletterEmail"
                                     class="form-control"
                                     placeholder="ex: sophie@dupont.com"
+                                    value="<?php echo $user->getEmail(); ?>"
                                     required
                                     aria-required="true"
                                     aria-labelledby="emailHelp"

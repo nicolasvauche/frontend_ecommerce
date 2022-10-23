@@ -8,6 +8,14 @@ if (!$_SESSION['userid']) {
     // On redirige vers la page de connexion
     Header('Location: connexion.php');
 }
+
+require_once 'php/classes/User.php';
+$user = new User($_SESSION['userid']);
+
+if (!$user) {
+    var_dump('Aucun utilisateur trouvé');
+    exit;
+}
 ?>
 
 <!DOCTYPE html>
@@ -131,7 +139,7 @@ if (!$_SESSION['userid']) {
 
                 <!-- Page Card -->
                 <section class="card">
-                    <h2>Bienvenue chez toi Sophie</h2>
+                    <h2>Bienvenue chez toi <?php echo $user->getFirstname(); ?></h2>
                     <p class="text-justify">
                         Tu as créé ton compte SHOE et tu as réussi à t'y connecter. Bravo !
                         Repère le petit menu supplémentaire sur la page, et navigue au sein
@@ -159,7 +167,7 @@ if (!$_SESSION['userid']) {
                                         id="userFirstname"
                                         class="form-control"
                                         placeholder="ex: Sophie"
-                                        value="Sophie"
+                                        value="<?php echo $user->getFirstname(); ?>"
                                         aria-labelledby="firstnameHelp"
                                 />
                                 <p id="firstnameHelp">
@@ -179,7 +187,7 @@ if (!$_SESSION['userid']) {
                                         id="userLastname"
                                         class="form-control"
                                         placeholder="ex: Dupont"
-                                        value="Dupont"
+                                        value="<?php echo $user->getLastname(); ?>"
                                         aria-labelledby="lastnameHelp"
                                 />
                                 <p id="lastnameHelp">
@@ -204,7 +212,7 @@ if (!$_SESSION['userid']) {
                                     id="userEmail"
                                     class="form-control"
                                     placeholder="ex: sophie@dupont.com"
-                                    value="sophie@dupont.com"
+                                    value="<?php echo $user->getEmail(); ?>"
                                     required
                                     aria-required="true"
                                     aria-labelledby="emailHelp"

@@ -3,10 +3,16 @@ require_once 'Bdd.php';
 
 class User extends Bdd
 {
+    private $id;
     private $firstname;
     private $lastname;
     private $email;
     private $password;
+
+    public function getId()
+    {
+        return $this->id;
+    }
 
     public function getFirstname()
     {
@@ -43,9 +49,13 @@ class User extends Bdd
         $this->password = $password;
     }
 
-    public function __construct()
+    public function __construct($id = null)
     {
         parent::__construct();
+
+        if ($id) {
+            $this->find($id);
+        }
     }
 
     public function create()
@@ -80,6 +90,27 @@ class User extends Bdd
         } catch (PDOException $exception) {
             var_dump($exception);
             exit;
+        }
+    }
+
+    public function find($id)
+    {
+        $sql = 'SELECT id, firstname, lastname, email FROM user WHERE id = ?';
+
+        try {
+            $statement = $this->getConnection()->prepare($sql);
+            $statement->execute([$id]);
+            $user = $statement->fetch(PDO::FETCH_ASSOC);
+        } catch (PDOException $exception) {
+            var_dump($exception);
+            exit;
+        }
+
+        if ($user) {
+            $this->id = $user['id'];
+            $this->setFirstname($user['firstname']);
+            $this->setLastname($user['lastname']);
+            $this->setEmail($user['email']);
         }
     }
 }
