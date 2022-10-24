@@ -146,10 +146,10 @@ file_put_contents('src/data/test.json', $contentJson);
                 <a href="inscription.php" class="app-btn cta"> Je crée mon compte</a>
             </section>
 
-            <section class="card">
-                <h2>Nos chaussures</h2>
+            <section class="px-1 py-2">
+                <h2>Nos chaussures <small>(en PHP)</small></h2>
 
-                <div class="products grid">
+                <div class="products grid four">
                     <?php foreach ($products as $product): ?>
                         <div class="product grid-item">
                             <img src="assets/img/catalog/shoes/<?php echo $product['img']['src']; ?>" alt="<?php echo $product['img']['alt']; ?>" />
@@ -159,9 +159,9 @@ file_put_contents('src/data/test.json', $contentJson);
                                 <?php echo NumberFormatter::create('fr-FR', NumberFormatter::CURRENCY)->format($product['price']); ?>
                             </p>
                             <?php if ($product['stock'] === 0): ?>
-                                <p class="stock nul">En précommande</p>
+                                <a href="#" class="app-btn cta bg-primary">En précommande</a>
                             <?php else: ?>
-                                <p class="stock">Il en reste <?php echo $product['stock']; ?></p>
+                                <a href="#" class="app-btn cta bg-success">Il en reste <?php echo $product['stock']; ?></a>
                             <?php endif; ?>
                         </div>
                     <?php endforeach; ?>
