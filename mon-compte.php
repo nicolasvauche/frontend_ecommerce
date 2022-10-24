@@ -131,8 +131,8 @@ if (!$user) {
                         <span>Mes commandes</span>
                     </a>
                     <hr />
-                    <a href="./" onclick="return window.confirm('Tu veux partir ?');">
-                        <i class="fa-solid fa-user-slash text-danger"></i>
+                    <a href="./" class="text-secondary" onclick="return window.confirm('Tu veux partir ?');">
+                        <i class="fa-solid fa-person-running text-secondary"></i>
                         <span>Déconnexion</span>
                     </a>
                 </div>
