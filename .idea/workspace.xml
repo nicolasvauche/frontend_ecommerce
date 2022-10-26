@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ChangeListManager">
+    <list default="true" id="527f6c4b-7972-4022-aeb9-3eb581ef1026" name="Changes" comment="">
+      <change beforePath="$PROJECT_DIR$/assets/css/styles.min.css" beforeDir="false" afterPath="$PROJECT_DIR$/assets/css/styles.min.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/css/styles.min.css.map" beforeDir="false" afterPath="$PROJECT_DIR$/assets/css/styles.min.css.map" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/js/sw.js" beforeDir="false" afterPath="$PROJECT_DIR$/assets/js/sw.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/serviceworker.js" beforeDir="false" afterPath="$PROJECT_DIR$/serviceworker.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/scss/components/_sliders.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/scss/components/_sliders.scss" afterDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="ComposerSettings">
+    <execution />
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="MarkdownSettingsMigration">
+    <option name="stateVersion" value="1" />
+  </component>
+  <component name="ProjectId" id="2FwmLfG4NyoPp59LiUqwJBfK0ve" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true">
+    <ConfirmationsSetting value="1" id="Add" />
+  </component>
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
+    &quot;last_opened_file_path&quot;: &quot;/Applications/MAMP/htdocs/shoe/config&quot;,
+    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;watcher.settings&quot;,
+    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
+  }
+}</component>
+  <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/config" />
+    </key>
+  </component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="527f6c4b-7972-4022-aeb9-3eb581ef1026" name="Changes" comment="" />
+      <created>1665411467041</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1665411467041</updated>
+      <workItem from="1665411471237" duration="17414000" />
+      <workItem from="1666093126083" duration="6335000" />
+      <workItem from="1666105410309" duration="294000" />
+      <workItem from="1666335952282" duration="8480000" />
+      <workItem from="1666559681211" duration="6895000" />
+      <workItem from="1666610931028" duration="1757000" />
+      <workItem from="1666698750747" duration="3039000" />
+      <workItem from="1666809402916" duration="105000" />
+      <workItem from="1666809518335" duration="780000" />
+    </task>
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="3" />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
+  </component>
+</project>
